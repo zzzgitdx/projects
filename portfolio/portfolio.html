@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>张欣杰｜横版 A4 作品集</title>
+<style>
+  @page {
+    size: A4 landscape;
+    margin: 0;
+  }
+
+  :root {
+    --ink: #1d1d1f;
+    --text: #424245;
+    --muted: #6e6e73;
+    --line: #d2d2d7;
+    --paper: #fbfbfd;
+    --wash: #f5f5f7;
+    --blue: #0066cc;
+    --night: #111114;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html,
+  body {
+    margin: 0;
+    min-height: 100%;
+  }
+
+  body {
+    background: #e8e8ed;
+    color: var(--ink);
+    font-family: "Hiragino Sans GB", "Heiti SC", "PingFang SC", "STHeiti", "Songti SC", "Microsoft YaHei", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+  }
+
+  .deck {
+    padding: 18px 0;
+  }
+
+  .page {
+    position: relative;
+    width: 297mm;
+    height: 210mm;
+    margin: 0 auto 18px;
+    overflow: hidden;
+    background: var(--paper);
+    box-shadow: 0 18px 60px rgba(29, 29, 31, 0.16);
+    break-after: page;
+    page-break-after: always;
+  }
+
+  .page:last-child {
+    break-after: auto;
+    page-break-after: auto;
+  }
+
+  .page-inner {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    padding: 17mm 18mm 15mm;
+  }
+
+  .page-top {
+    position: absolute;
+    top: 8mm;
+    left: 18mm;
+    right: 18mm;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--muted);
+    font-size: 3.2mm;
+    font-weight: 750;
+    letter-spacing: 0;
+  }
+
+  .page-index {
+    color: var(--ink);
+  }
+
+  .hero-page {
+    background: linear-gradient(180deg, #fbfbfd 0%, #f5f5f7 100%);
+  }
+
+  .hero-grid {
+    height: 100%;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 68mm;
+    gap: 20mm;
+    align-items: center;
+    padding-top: 8mm;
+  }
+
+  .eyebrow {
+    margin: 0 0 5mm;
+    color: var(--muted);
+    font-size: 4.1mm;
+    font-weight: 800;
+  }
+
+  .hero-title {
+    margin: 0;
+    color: var(--ink);
+    font-size: 22mm;
+    font-weight: 900;
+    line-height: 0.96;
+    letter-spacing: 0;
+  }
+
+  .hero-title span,
+  .project-title span {
+    display: block;
+    white-space: nowrap;
+  }
+
+  .hero-role {
+    margin-top: 8mm;
+    color: var(--blue);
+    font-size: 6.2mm;
+    font-weight: 900;
+  }
+
+  .hero-summary {
+    margin: 6mm 0 0;
+    max-width: 135mm;
+    color: var(--text);
+    font-size: 4.2mm;
+    font-weight: 700;
+    line-height: 1.55;
+  }
+
+  .contact-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4mm 8mm;
+    margin-top: 8mm;
+    color: var(--text);
+    font-size: 3.8mm;
+  }
+
+  .contact-row a {
+    color: var(--blue);
+  }
+
+  .hero-side {
+    display: grid;
+    gap: 7mm;
+  }
+
+  .portrait {
+    margin: 0;
+    width: 62mm;
+    height: 76mm;
+    overflow: hidden;
+    border: 0.35mm solid var(--line);
+    border-radius: 9mm;
+    background: #fff;
+    box-shadow: 0 8mm 24mm rgba(29, 29, 31, 0.12);
+  }
+
+  .portrait img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .capability-list {
+    display: grid;
+    gap: 3.4mm;
+    width: 62mm;
+  }
+
+  .capability {
+    display: flex;
+    justify-content: space-between;
+    gap: 5mm;
+    padding-top: 3.2mm;
+    border-top: 0.3mm solid var(--line);
+    color: var(--muted);
+    font-size: 3.4mm;
+    font-weight: 800;
+  }
+
+  .capability strong {
+    color: var(--ink);
+    font-weight: 900;
+  }
+
+  .project-page {
+    background: var(--wash);
+  }
+
+  .project-layout {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 82mm minmax(0, 1fr);
+    gap: 12mm;
+    align-items: center;
+    padding-top: 5mm;
+  }
+
+  .project-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 2.4mm;
+    margin-bottom: 4mm;
+    color: var(--muted);
+    font-size: 3.3mm;
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+
+  .project-kicker::before {
+    content: "";
+    width: 9mm;
+    height: 0.3mm;
+    background: currentColor;
+  }
+
+  .project-label {
+    margin: 0 0 3mm;
+    color: var(--muted);
+    font-size: 3.6mm;
+    font-weight: 800;
+  }
+
+  .project-title {
+    margin: 0;
+    color: var(--ink);
+    font-size: 11.7mm;
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: 0;
+  }
+
+  .project-lead {
+    margin: 5mm 0 0;
+    max-width: 74mm;
+    color: var(--text);
+    font-size: 4mm;
+    font-weight: 800;
+    line-height: 1.45;
+  }
+
+  .tag-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.6mm;
+    margin-top: 7mm;
+  }
+
+  .tag {
+    padding: 2.3mm 3.4mm;
+    border: 0.25mm solid color-mix(in srgb, var(--line) 76%, transparent);
+    border-radius: 20mm;
+    background: color-mix(in srgb, #fff 78%, transparent);
+    color: var(--ink);
+    font-size: 3.15mm;
+    font-weight: 850;
+    line-height: 1;
+  }
+
+  .visual-stage {
+    min-width: 0;
+  }
+
+  .crm-stage {
+    display: grid;
+    grid-template-rows: 118mm 31mm;
+    gap: 4mm;
+    align-items: stretch;
+  }
+
+  .main-shot,
+  .side-shot,
+  .phone-shot {
+    margin: 0;
+    display: grid;
+    gap: 2mm;
+    min-width: 0;
+  }
+
+  .main-shot img,
+  .side-shot img,
+  .phone-shot img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border: 0.3mm solid var(--line);
+    background: #fbfbfd;
+    box-shadow: 0 8mm 22mm rgba(29, 29, 31, 0.1);
+  }
+
+  .main-shot {
+    height: 118mm;
+  }
+
+  .main-shot img {
+    border-radius: 7.4mm;
+  }
+
+  .side-rail {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 3.4mm;
+    min-width: 0;
+  }
+
+  .side-shot {
+    height: 31mm;
+  }
+
+  .side-shot img {
+    border-radius: 5mm;
+  }
+
+  figcaption {
+    color: var(--muted);
+    font-size: 2.7mm;
+    font-weight: 700;
+    line-height: 1.25;
+    text-align: left;
+  }
+
+  .driver-page {
+    background: #fff;
+  }
+
+  .driver-stage {
+    display: grid;
+    justify-items: end;
+    gap: 4mm;
+  }
+
+  .phone-rail {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 4.4mm;
+    align-items: end;
+  }
+
+  .phone-shot {
+    height: 123mm;
+  }
+
+  .phone-shot:nth-child(1),
+  .phone-shot:nth-child(3) {
+    padding-top: 10mm;
+  }
+
+  .phone-shot img {
+    border-radius: 7mm;
+  }
+
+  .ai-page {
+    background: var(--night);
+    color: var(--paper);
+  }
+
+  .ai-page .page-top,
+  .ai-page .project-kicker,
+  .ai-page .project-label {
+    color: #a1a1a6;
+  }
+
+  .ai-page .page-index,
+  .ai-page .project-title {
+    color: #f5f5f7;
+  }
+
+  .ai-page .project-lead {
+    color: #d2d2d7;
+  }
+
+  .ai-page .tag {
+    border-color: rgba(245, 245, 247, 0.18);
+    background: #1d1d1f;
+    color: #f5f5f7;
+  }
+
+  .ai-layout {
+    height: 100%;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 88mm;
+    gap: 16mm;
+    align-items: center;
+    padding-top: 5mm;
+  }
+
+  .flow-panel {
+    padding: 10mm;
+    border: 0.3mm solid rgba(245, 245, 247, 0.16);
+    border-radius: 9mm;
+    background: #1d1d1f;
+  }
+
+  .flow-list {
+    display: grid;
+    gap: 6mm;
+  }
+
+  .flow-step {
+    display: grid;
+    grid-template-columns: 12mm 1fr;
+    gap: 5mm;
+    align-items: center;
+    padding-bottom: 6.5mm;
+    border-bottom: 0.25mm solid rgba(245, 245, 247, 0.13);
+  }
+
+  .flow-step:last-child {
+    padding-bottom: 0;
+    border-bottom: 0;
+  }
+
+  .flow-index {
+    color: #86868b;
+    font-size: 4mm;
+    font-weight: 900;
+    line-height: 1.2;
+  }
+
+  .flow-text strong {
+    display: block;
+    color: #f5f5f7;
+    font-size: 5.5mm;
+    font-weight: 900;
+    line-height: 1.18;
+  }
+
+  @media screen and (max-width: 1180px) {
+    .deck {
+      overflow-x: auto;
+    }
+  }
+
+  @media print {
+    body {
+      background: #fff;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .deck {
+      padding: 0;
+    }
+
+    .page {
+      margin: 0;
+      box-shadow: none;
+    }
+  }
+</style>
+</head>
+<body>
+<main class="deck">
+  <section class="page hero-page">
+    <div class="page-top">
+      <span>张欣杰作品集</span>
+      <span class="page-index">01 / Who I Am</span>
+    </div>
+    <div class="page-inner hero-grid">
+      <div>
+        <p class="eyebrow">Product / AI Product / FDE</p>
+        <h1 class="hero-title"><span>把线下业务，</span><span>做成可上线的产品。</span></h1>
+        <div class="hero-role">张欣杰｜XINJIE ZHANG</div>
+        <p class="hero-summary">
+          产品经理 / AI 产品方向，关注 0-1 业务系统和 AI 原生工作流落地。
+        </p>
+        <div class="contact-row">
+          <span>13172918902</span>
+          <a href="mailto:1278511339@qq.com">1278511339@qq.com</a>
+          <a href="https://zzzgitdx.github.io/resume/" target="_blank" rel="noreferrer">zzzgitdx.github.io/resume</a>
+        </div>
+      </div>
+
+      <aside class="hero-side" aria-label="个人定位">
+        <figure class="portrait">
+          <img src="./pic.jpg" alt="张欣杰照片">
+        </figure>
+        <div class="capability-list">
+          <div class="capability"><span>方向</span><strong>产品经理 / AI 产品</strong></div>
+          <div class="capability"><span>擅长</span><strong>0-1 业务系统</strong></div>
+          <div class="capability"><span>关键词</span><strong>流程拆解 / 落地推进</strong></div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="page project-page">
+    <div class="page-top">
+      <span>利众客户速录与融资咨询管理系统</span>
+      <span class="page-index">02 / Project</span>
+    </div>
+    <div class="page-inner project-layout">
+      <div class="project-copy">
+        <div class="project-kicker">Project 01</div>
+        <p class="project-label">Vehicle Financing CRM</p>
+        <h2 class="project-title"><span>车辆融资咨询业务，</span><span>内部协同系统。</span></h2>
+        <p class="project-lead">线下获客、客户跟进、产品匹配和转化追踪的一体化系统。</p>
+        <div class="tag-row">
+          <span class="tag">客户 H5</span>
+          <span class="tag">企业后台</span>
+          <span class="tag">产品匹配</span>
+          <span class="tag">AI 辅助录入</span>
+        </div>
+      </div>
+
+      <div class="visual-stage crm-stage" aria-label="利众客户速录项目截图">
+        <figure class="main-shot">
+          <img src="./assets/lizhong-01.svg" alt="利众客户速录与融资咨询管理系统客户登记页面">
+          <figcaption>客户 H5 登记 / 基础资料提交</figcaption>
+        </figure>
+        <div class="side-rail">
+          <figure class="side-shot">
+            <img src="./assets/lizhong-02.svg" alt="利众客户速录与融资咨询管理系统客户管理页面">
+            <figcaption>客户管理</figcaption>
+          </figure>
+          <figure class="side-shot">
+            <img src="./assets/lizhong-03.svg" alt="利众客户速录与融资咨询管理系统产品库页面">
+            <figcaption>产品库</figcaption>
+          </figure>
+          <figure class="side-shot">
+            <img src="./assets/lizhong-04.svg" alt="利众客户速录与融资咨询管理系统匹配工单页面">
+            <figcaption>匹配工单</figcaption>
+          </figure>
+          <figure class="side-shot">
+            <img src="./assets/lizhong-05.svg" alt="利众客户速录与融资咨询管理系统智能匹配页面">
+            <figcaption>智能匹配</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="page driver-page">
+    <div class="page-top">
+      <span>利众代驾平台</span>
+      <span class="page-index">03 / Project</span>
+    </div>
+    <div class="page-inner project-layout">
+      <div class="project-copy">
+        <div class="project-kicker">Project 02</div>
+        <p class="project-label">Local Driver Service</p>
+        <h2 class="project-title"><span>本地代驾服务，</span><span>更容易运营。</span></h2>
+        <p class="project-lead">面向本地代驾服务的司机、订单和运营协同平台。</p>
+        <div class="tag-row">
+          <span class="tag">司机管理</span>
+          <span class="tag">订单调度</span>
+          <span class="tag">移动端体验</span>
+          <span class="tag">运营数据</span>
+        </div>
+      </div>
+
+      <div class="visual-stage driver-stage" aria-label="利众代驾平台截图">
+        <div class="phone-rail">
+          <figure class="phone-shot">
+            <img src="./assets/daijia-01.svg" alt="利众代驾平台首页">
+            <figcaption>代驾首页</figcaption>
+          </figure>
+          <figure class="phone-shot">
+            <img src="./assets/daijia-02.svg" alt="利众代驾平台司机管理页面">
+            <figcaption>司机管理</figcaption>
+          </figure>
+          <figure class="phone-shot">
+            <img src="./assets/daijia-03.svg" alt="利众代驾平台订单调度页面">
+            <figcaption>订单调度</figcaption>
+          </figure>
+          <figure class="phone-shot">
+            <img src="./assets/daijia-04.svg" alt="利众代驾平台运营数据页面">
+            <figcaption>运营数据</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="page ai-page">
+    <div class="page-top">
+      <span>抖音内容安全 AI 识别优化</span>
+      <span class="page-index">04 / Text-only Case</span>
+    </div>
+    <div class="page-inner ai-layout">
+      <div class="project-copy">
+        <div class="project-kicker">Project 03</div>
+        <p class="project-label">Content Safety / ASR</p>
+        <h2 class="project-title"><span>粤语内容安全识别，</span><span>更稳定。</span></h2>
+        <p class="project-lead">
+          面向粤语直播内容安全，优化样本标注、规则口径与识别复盘。
+        </p>
+        <div class="tag-row">
+          <span class="tag">粤语方言</span>
+          <span class="tag">ASR 识别</span>
+          <span class="tag">标注 SOP</span>
+          <span class="tag">误报 / 漏报分析</span>
+        </div>
+      </div>
+
+      <aside class="flow-panel" aria-label="抖音内容安全项目流程">
+        <div class="flow-list">
+          <div class="flow-step">
+            <div class="flow-index">01</div>
+            <div class="flow-text"><strong>样本标注与审核</strong></div>
+          </div>
+          <div class="flow-step">
+            <div class="flow-index">02</div>
+            <div class="flow-text"><strong>方言违规特征归因</strong></div>
+          </div>
+          <div class="flow-step">
+            <div class="flow-index">03</div>
+            <div class="flow-text"><strong>标注 SOP 沉淀</strong></div>
+          </div>
+          <div class="flow-step">
+            <div class="flow-index">04</div>
+            <div class="flow-text"><strong>误报 / 漏报复盘</strong></div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+</main>
+</body>
+</html>

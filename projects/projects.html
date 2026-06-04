@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>项目经历｜张欣杰</title>
+<meta name="description" content="张欣杰产品经理项目集，展示0-1业务系统搭建、车辆融资咨询CRM、AI智能匹配等项目经验。">
+<title>项目集｜张欣杰</title>
 <style>
   * {
     margin: 0;
@@ -17,7 +18,6 @@
     color: #111827;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
-    overflow-x: hidden;
   }
 
   /* ── Header ── */
@@ -516,19 +516,20 @@
     .header-nav.active { display: flex; }
     .header-nav a { font-size: 15px; padding: 8px 0; }
     .project-section, .site-footer { padding-left: 20px; padding-right: 20px; }
-    .carousel-thumbnail { width: 80px; height: 60px; }
+    .carousel-thumbnail-item .carousel-thumbnail { width: 70px; height: 52px; }
     .carousel-thumbnail-title { font-size: 11px; }
-    .carousel-thumbnails { justify-content: flex-start; padding: 12px; gap: 8px; }
+    .carousel-thumbnails { padding: 12px; gap: 8px; }
     .carousel-btn { display: none; }
   }
 
   /* ── Carousel ── */
   .carousel {
     position: relative;
-    margin-bottom: 40px;
-    border-radius: 10px;
+    margin-bottom: 0;
+    border-radius: 10px 10px 0 0;
     overflow: hidden;
     border: 1px solid #e5e7eb;
+    border-bottom: none;
     background: #f9fafb;
   }
 
@@ -621,8 +622,10 @@
     gap: 12px;
     padding: 16px;
     background: #fff;
+    border: 1px solid #e5e7eb;
     border-top: 1px solid #e5e7eb;
-    justify-content: center;
+    border-radius: 0 0 10px 10px;
+    margin-bottom: 40px;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
   }
@@ -644,8 +647,8 @@
   }
 
   .carousel-thumbnail {
-    width: 120px;
-    height: 90px;
+    width: 100px;
+    height: 75px;
     object-fit: cover;
     border-radius: 8px;
     border: 2px solid transparent;
@@ -675,7 +678,7 @@
 <!-- Header -->
 <header class="site-header">
   <div class="header-inner">
-    <a href="#" class="header-logo">张欣杰</a>
+    <a href="#" class="header-logo">项目集</a>
     <button class="hamburger" onclick="toggleMenu()" aria-label="菜单">
       <svg viewBox="0 0 24 24"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
     </button>
@@ -691,7 +694,7 @@
 <!-- Hero -->
 <section class="hero">
   <div class="hero-content">
-    <h1>项目经历</h1>
+    <h1>项目集</h1>
     <div class="hero-info">
       <div class="hero-name">
         <span class="name-cn">张欣杰</span>
@@ -767,23 +770,23 @@
     <button class="carousel-btn carousel-btn-next" onclick="nextSlide('lizhong-carousel')">
       <svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
     </button>
-    <div class="carousel-thumbnails">
-      <div class="carousel-thumbnail-item active" onclick="goToSlide('lizhong-carousel', 0)">
-        <img src="./assets/lizhong-01.svg" alt="H5 客户登记" class="carousel-thumbnail">
-        <span class="carousel-thumbnail-title">H5 客户登记</span>
-      </div>
-      <div class="carousel-thumbnail-item" onclick="goToSlide('lizhong-carousel', 1)">
-        <img src="./assets/lizhong-02.svg" alt="客户管理" class="carousel-thumbnail">
-        <span class="carousel-thumbnail-title">客户管理</span>
-      </div>
-      <div class="carousel-thumbnail-item" onclick="goToSlide('lizhong-carousel', 2)">
-        <img src="./assets/lizhong-03.svg" alt="产品库" class="carousel-thumbnail">
-        <span class="carousel-thumbnail-title">产品库</span>
-      </div>
-      <div class="carousel-thumbnail-item" onclick="goToSlide('lizhong-carousel', 3)">
-        <img src="./assets/lizhong-04.svg" alt="匹配工单" class="carousel-thumbnail">
-        <span class="carousel-thumbnail-title">匹配工单</span>
-      </div>
+  </div>
+  <div class="carousel-thumbnails">
+    <div class="carousel-thumbnail-item active" onclick="goToSlide('lizhong-carousel', 0)">
+      <img src="./assets/lizhong-01.svg" alt="H5 客户登记" class="carousel-thumbnail">
+      <span class="carousel-thumbnail-title">H5 客户登记</span>
+    </div>
+    <div class="carousel-thumbnail-item" onclick="goToSlide('lizhong-carousel', 1)">
+      <img src="./assets/lizhong-02.svg" alt="客户管理" class="carousel-thumbnail">
+      <span class="carousel-thumbnail-title">客户管理</span>
+    </div>
+    <div class="carousel-thumbnail-item" onclick="goToSlide('lizhong-carousel', 2)">
+      <img src="./assets/lizhong-03.svg" alt="产品库" class="carousel-thumbnail">
+      <span class="carousel-thumbnail-title">产品库</span>
+    </div>
+    <div class="carousel-thumbnail-item" onclick="goToSlide('lizhong-carousel', 3)">
+      <img src="./assets/lizhong-04.svg" alt="匹配工单" class="carousel-thumbnail">
+      <span class="carousel-thumbnail-title">匹配工单</span>
     </div>
   </div>
 
@@ -945,7 +948,8 @@ function updateCarousel(carouselId) {
 
   const state = carouselStates[carouselId];
   const inner = carousel.querySelector('.carousel-inner');
-  const thumbnails = carousel.querySelectorAll('.carousel-thumbnail-item');
+  const thumbnailsContainer = carousel.parentElement.querySelector('.carousel-thumbnails');
+  const thumbnails = thumbnailsContainer ? thumbnailsContainer.querySelectorAll('.carousel-thumbnail-item') : [];
 
   inner.style.transform = `translateX(-${state.currentSlide * 100}%)`;
 

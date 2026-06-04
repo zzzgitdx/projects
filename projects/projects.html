@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="张欣杰产品经理项目集，展示0-1业务系统搭建、车辆融资咨询CRM、AI智能匹配等项目经验。">
 <title>项目集｜张欣杰</title>
+<link rel="preload" as="image" href="./pic2-compressed.jpg">
 <style>
   * {
     margin: 0;
@@ -214,6 +215,11 @@
   .section-meta a {
     color: #174a6a;
     text-decoration: none;
+  }
+
+  .section-meta a:visited,
+  .section-meta a:active {
+    color: #174a6a;
   }
 
   .section-meta a:hover {
@@ -449,29 +455,30 @@
     margin: 0 auto;
     padding: 40px;
     border-top: 1px solid #e5e7eb;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    text-align: center;
   }
 
-  .footer-info {
-    font-size: 13px;
+  .footer-nav {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .footer-nav a {
+    font-size: 14px;
     color: #475569;
-  }
-
-  .footer-links {
-    display: flex;
-    gap: 20px;
-  }
-
-  .footer-links a {
-    font-size: 13px;
-    color: #174a6a;
     text-decoration: none;
+    transition: color 0.2s;
   }
 
-  .footer-links a:hover {
-    text-decoration: underline;
+  .footer-nav a:hover {
+    color: #174a6a;
+  }
+
+  .footer-copyright {
+    font-size: 12px;
+    color: #94a3b8;
   }
 
   /* ── Responsive ── */
@@ -515,7 +522,8 @@
     }
     .header-nav.active { display: flex; }
     .header-nav a { font-size: 15px; padding: 8px 0; }
-    .project-section, .site-footer { padding-left: 20px; padding-right: 20px; }
+    .project-section { padding: 32px 20px; }
+    .site-footer { padding: 32px 20px; }
     .carousel-thumbnail-item .carousel-thumbnail { width: 70px; height: 52px; }
     .carousel-thumbnail-title { font-size: 11px; }
     .carousel-thumbnails { padding: 12px; gap: 8px; }
@@ -671,6 +679,58 @@
     color: #174a6a;
     font-weight: 500;
   }
+
+  /* ── QR Code Modal ── */
+  .qr-modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 200;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .qr-modal-overlay.active {
+    display: flex;
+  }
+
+  .qr-modal {
+    background: #fff;
+    border-radius: 16px;
+    padding: 32px;
+    text-align: center;
+    max-width: 320px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+  }
+
+  .qr-modal img {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    margin: 16px auto;
+  }
+
+  .qr-modal p {
+    font-size: 14px;
+    color: #475569;
+    margin-top: 12px;
+  }
+
+  .qr-modal-close {
+    margin-top: 16px;
+    padding: 8px 24px;
+    background: #174a6a;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+
+  .qr-modal-close:hover {
+    background: #0f3a54;
+  }
 </style>
 </head>
 <body>
@@ -752,16 +812,16 @@
   <div class="carousel" id="lizhong-carousel">
     <div class="carousel-inner">
       <div class="carousel-item">
-        <img src="./assets/lizhong-01.svg" alt="H5 客户登记">
+        <img src="./assets/lizhong-01.svg" alt="H5 客户登记" loading="lazy" decoding="async">
       </div>
       <div class="carousel-item">
-        <img src="./assets/lizhong-02.svg" alt="客户管理">
+        <img src="./assets/lizhong-02.svg" alt="客户管理" loading="lazy" decoding="async">
       </div>
       <div class="carousel-item">
-        <img src="./assets/lizhong-03.svg" alt="产品库">
+        <img src="./assets/lizhong-03.svg" alt="产品库" loading="lazy" decoding="async">
       </div>
       <div class="carousel-item">
-        <img src="./assets/lizhong-04.svg" alt="匹配工单">
+        <img src="./assets/lizhong-04.svg" alt="匹配工单" loading="lazy" decoding="async">
       </div>
     </div>
     <button class="carousel-btn carousel-btn-prev" onclick="prevSlide('lizhong-carousel')">
@@ -773,19 +833,19 @@
   </div>
   <div class="carousel-thumbnails">
     <div class="carousel-thumbnail-item active" onclick="goToSlide('lizhong-carousel', 0)">
-      <img src="./assets/lizhong-01.svg" alt="H5 客户登记" class="carousel-thumbnail">
+      <img src="./assets/lizhong-01.svg" alt="H5 客户登记" class="carousel-thumbnail" loading="lazy" decoding="async">
       <span class="carousel-thumbnail-title">H5 客户登记</span>
     </div>
     <div class="carousel-thumbnail-item" onclick="goToSlide('lizhong-carousel', 1)">
-      <img src="./assets/lizhong-02.svg" alt="客户管理" class="carousel-thumbnail">
+      <img src="./assets/lizhong-02.svg" alt="客户管理" class="carousel-thumbnail" loading="lazy" decoding="async">
       <span class="carousel-thumbnail-title">客户管理</span>
     </div>
     <div class="carousel-thumbnail-item" onclick="goToSlide('lizhong-carousel', 2)">
-      <img src="./assets/lizhong-03.svg" alt="产品库" class="carousel-thumbnail">
+      <img src="./assets/lizhong-03.svg" alt="产品库" class="carousel-thumbnail" loading="lazy" decoding="async">
       <span class="carousel-thumbnail-title">产品库</span>
     </div>
     <div class="carousel-thumbnail-item" onclick="goToSlide('lizhong-carousel', 3)">
-      <img src="./assets/lizhong-04.svg" alt="匹配工单" class="carousel-thumbnail">
+      <img src="./assets/lizhong-04.svg" alt="匹配工单" class="carousel-thumbnail" loading="lazy" decoding="async">
       <span class="carousel-thumbnail-title">匹配工单</span>
     </div>
   </div>
@@ -814,49 +874,86 @@
 <section class="project-section" id="project-daijia">
   <div class="section-header">
     <h2 class="section-title">利众代驾平台</h2>
-    <div class="section-meta">产品经理｜2024.12 - 2026.04｜微信小程序 - 利众代驾</div>
+    <div class="section-meta"><strong>微信小程序：</strong><a href="#" onclick="showQRCode('daijia'); return false;">利众代驾</a></div>
   </div>
 
   <div class="project-intro">
-    本地代驾 O2O 平台，连接用户下单与司机接单，围绕司机管理、订单调度、页面体验持续迭代。
+    <p>本地代驾 O2O 平台，连接用户下单与司机接单，围绕司机管理、订单调度、页面体验持续迭代。</p>
+    <ul>
+      <li><strong>O2O 迭代：</strong>推进司机入驻、订单管理和调度中心迭代，优化派单逻辑和供需调度流程</li>
+      <li><strong>体验重构：</strong>统一用户端、司机端页面和线下物料视觉规范，提升业务展示专业度</li>
+      <li><strong>数据驱动：</strong>提取订单量、完单率、司机活跃度等关键指标，反哺调度策略和迭代方向</li>
+      <li><strong>项目成效：</strong>用户端下单流程更顺畅，司机端接单效率提升，清远本地单量明显增长</li>
+    </ul>
   </div>
 
-  <div class="project-grid">
-    <div class="project-card">
-      <div class="card-title">O2O 迭代</div>
-      <div class="card-content">司机入驻、订单管理、调度中心迭代，优化派单逻辑。</div>
+  <div class="project-tags">
+    <span class="project-tag">O2O</span>
+    <span class="project-tag">代驾平台</span>
+    <span class="project-tag">司机管理</span>
+    <span class="project-tag">订单调度</span>
+    <span class="project-tag">微信小程序</span>
+    <span class="project-tag">体验重构</span>
+    <span class="project-tag">数据驱动</span>
+  </div>
+
+  <!-- Project Images Carousel -->
+  <div class="carousel" id="daijia-carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item">
+        <img src="./assets/daijia-01.svg" alt="代驾首页" loading="lazy" decoding="async">
+      </div>
+      <div class="carousel-item">
+        <img src="./assets/daijia-02.svg" alt="司机管理" loading="lazy" decoding="async">
+      </div>
+      <div class="carousel-item">
+        <img src="./assets/daijia-03.svg" alt="订单调度" loading="lazy" decoding="async">
+      </div>
+      <div class="carousel-item">
+        <img src="./assets/daijia-04.svg" alt="运营数据" loading="lazy" decoding="async">
+      </div>
     </div>
-    <div class="project-card">
-      <div class="card-title">体验重构</div>
-      <div class="card-content">统一用户端、司机端视觉规范，提升专业度和转化。</div>
+    <button class="carousel-btn carousel-btn-prev" onclick="prevSlide('daijia-carousel')">
+      <svg viewBox="0 0 24 24"><path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6z"/></svg>
+    </button>
+    <button class="carousel-btn carousel-btn-next" onclick="nextSlide('daijia-carousel')">
+      <svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
+    </button>
+  </div>
+  <div class="carousel-thumbnails">
+    <div class="carousel-thumbnail-item active" onclick="goToSlide('daijia-carousel', 0)">
+      <img src="./assets/daijia-01.svg" alt="代驾首页" class="carousel-thumbnail" loading="lazy" decoding="async">
+      <span class="carousel-thumbnail-title">代驾首页</span>
     </div>
-    <div class="project-card">
-      <div class="card-title">数据驱动</div>
-      <div class="card-content">提取订单量、完单率、司机活跃度等指标，反哺调度策略。</div>
+    <div class="carousel-thumbnail-item" onclick="goToSlide('daijia-carousel', 1)">
+      <img src="./assets/daijia-02.svg" alt="司机管理" class="carousel-thumbnail" loading="lazy" decoding="async">
+      <span class="carousel-thumbnail-title">司机管理</span>
     </div>
-    <div class="project-card">
-      <div class="card-title">项目成效</div>
-      <div class="card-content">下单更顺畅，接单效率提升，本地单量增长。</div>
+    <div class="carousel-thumbnail-item" onclick="goToSlide('daijia-carousel', 2)">
+      <img src="./assets/daijia-03.svg" alt="订单调度" class="carousel-thumbnail" loading="lazy" decoding="async">
+      <span class="carousel-thumbnail-title">订单调度</span>
+    </div>
+    <div class="carousel-thumbnail-item" onclick="goToSlide('daijia-carousel', 3)">
+      <img src="./assets/daijia-04.svg" alt="运营数据" class="carousel-thumbnail" loading="lazy" decoding="async">
+      <span class="carousel-thumbnail-title">运营数据</span>
     </div>
   </div>
 
-  <!-- Project Images -->
-  <div class="image-gallery gallery-grid">
-    <div class="gallery-item">
-      <img src="./assets/daijia-01.svg" alt="代驾首页">
-      <div class="gallery-caption">代驾首页</div>
-    </div>
-    <div class="gallery-item">
-      <img src="./assets/daijia-02.svg" alt="司机管理">
-      <div class="gallery-caption">司机管理</div>
-    </div>
-    <div class="gallery-item">
-      <img src="./assets/daijia-03.svg" alt="订单调度">
-      <div class="gallery-caption">订单调度</div>
-    </div>
-    <div class="gallery-item">
-      <img src="./assets/daijia-04.svg" alt="运营数据">
-      <div class="gallery-caption">运营数据</div>
+  <div class="project-result">
+    <div class="result-label">关键贡献</div>
+    <div class="result-content">
+      <p>从 0 到 1 参与代驾平台迭代，围绕司机入驻、订单调度、用户端体验和运营数据四个方向持续优化，推动产品从能用到好用。</p>
+      <ul>
+        <li><strong>O2O 迭代：</strong>推进司机入驻、订单管理和调度中心迭代，优化派单逻辑和供需调度流程</li>
+        <li><strong>体验重构：</strong>统一用户端、司机端页面和线下物料视觉规范，提升业务展示专业度</li>
+        <li><strong>数据驱动：</strong>提取订单量、完单率、司机活跃度等关键指标，反哺调度策略和迭代方向</li>
+      </ul>
+      <div class="result-tags">
+        <span class="result-tag">O2O 平台</span>
+        <span class="result-tag">司机管理</span>
+        <span class="result-tag">体验重构</span>
+        <span class="result-tag">数据驱动</span>
+      </div>
     </div>
   </div>
 </section>
@@ -865,51 +962,82 @@
 <section class="project-section" id="project-douyin">
   <div class="section-header">
     <h2 class="section-title">抖音内容安全 AI 识别优化</h2>
-    <div class="section-meta">AI 数据产品实习生｜2023.10 - 2023.12｜字节跳动</div>
+    <div class="section-meta"><strong>字节跳动</strong>｜抖音内容安全</div>
   </div>
 
   <div class="project-intro">
-    抖音粤语直播内容安全场景，参与方言敏感词库与 ASR 模型优化。
+    <p>抖音粤语直播内容安全场景，参与方言敏感词库与 ASR 模型优化。</p>
+    <ul>
+      <li><strong>数据标注：</strong>负责粤语违规内容标注与样本审核，保障模型训练数据质量</li>
+      <li><strong>规则优化：</strong>沉淀高频违规特征与标注 SOP，协助分析误报 / 漏报案例，推动规则迭代</li>
+      <li><strong>方言识别：</strong>针对粤语直播场景，优化 ASR 模型训练数据，提升方言内容识别准确率</li>
+      <li><strong>复盘分析：</strong>系统性分析误报 / 漏报案例，提炼改进方向，支持内容安全策略持续优化</li>
+    </ul>
   </div>
 
-  <div class="keyword-grid">
-    <div class="keyword-card">
-      <div class="keyword-title">粤语方言</div>
-      <div class="keyword-desc">粤语违规内容标注</div>
-    </div>
-    <div class="keyword-card">
-      <div class="keyword-title">ASR 识别</div>
-      <div class="keyword-desc">ASR 模型训练数据</div>
-    </div>
-    <div class="keyword-card">
-      <div class="keyword-title">标注 SOP</div>
-      <div class="keyword-desc">高频违规特征与标注规范</div>
-    </div>
-    <div class="keyword-card">
-      <div class="keyword-title">误报漏报</div>
-      <div class="keyword-desc">误报漏报案例分析</div>
-    </div>
+  <div class="project-tags">
+    <span class="project-tag">内容安全</span>
+    <span class="project-tag">AI 识别</span>
+    <span class="project-tag">粤语方言</span>
+    <span class="project-tag">ASR 模型</span>
+    <span class="project-tag">数据标注</span>
+    <span class="project-tag">标注 SOP</span>
+    <span class="project-tag">误报漏报分析</span>
   </div>
 
   <div class="project-result">
-    <div class="result-label">项目成效</div>
-    <div class="result-text">提供高质量标注样本和规则依据，支持模型迭代优化。</div>
+    <div class="result-label">关键贡献</div>
+    <div class="result-content">
+      <p>参与抖音粤语直播内容安全 AI 识别优化，从数据标注、规则沉淀到误报漏报复盘，为方言场景模型迭代提供高质量标注样本和规则依据。</p>
+      <ul>
+        <li><strong>数据标注：</strong>负责粤语违规内容标注与样本审核，保障模型训练数据质量</li>
+        <li><strong>规则优化：</strong>沉淀高频违规特征与标注 SOP，协助分析误报 / 漏报案例，推动规则迭代</li>
+      </ul>
+      <div class="result-tags">
+        <span class="result-tag">内容安全</span>
+        <span class="result-tag">AI 数据产品</span>
+        <span class="result-tag">方言识别</span>
+      </div>
+    </div>
   </div>
 </section>
 
+<!-- QR Code Modal -->
+<div class="qr-modal-overlay" id="qr-modal">
+  <div class="qr-modal">
+    <strong>微信扫码关注公众号</strong>
+    <div style="width:200px;height:200px;margin:16px auto;border:2px dashed #cbd5e1;border-radius:12px;display:flex;align-items:center;justify-content:center;color:#94a3b8;font-size:14px;">二维码占位</div>
+    <p id="qr-modal-text">利众代驾公众号</p>
+    <button class="qr-modal-close" onclick="hideQRCode()">关闭</button>
+  </div>
+</div>
+
 <!-- Footer -->
 <footer class="site-footer">
-  <div class="footer-info">© 2024 张欣杰</div>
-  <div class="footer-links">
-    <a href="#">首页</a>
-    <a href="#project-lizhong">利众客户速录</a>
-    <a href="#project-daijia">利众代驾</a>
-    <a href="#project-douyin">抖音内容安全</a>
+  <nav class="footer-nav">
+    <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'}); return false;">回到顶部</a>
+    <span style="color:#cbd5e1">｜</span>
     <a href="mailto:1278511339@qq.com">联系我</a>
-  </div>
+  </nav>
+  <div class="footer-copyright"><span style="font-size:14px;margin-right:4px">项目集</span> by Xinjie Zhang</div>
 </footer>
 
 <script>
+// QR Code Modal
+function showQRCode(type) {
+  const modal = document.getElementById('qr-modal');
+  modal.classList.add('active');
+}
+
+function hideQRCode() {
+  document.getElementById('qr-modal').classList.remove('active');
+}
+
+// Close modal on overlay click
+document.getElementById('qr-modal').addEventListener('click', function(e) {
+  if (e.target === this) hideQRCode();
+});
+
 // Mobile menu toggle
 function toggleMenu() {
   const nav = document.querySelector('.header-nav');
@@ -1008,6 +1136,8 @@ function addSwipeSupport(carouselId) {
 document.addEventListener('DOMContentLoaded', () => {
   initCarousel('lizhong-carousel');
   addSwipeSupport('lizhong-carousel');
+  initCarousel('daijia-carousel');
+  addSwipeSupport('daijia-carousel');
 });
 </script>
 

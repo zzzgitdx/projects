@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>张欣杰 - 产品经理简历</title>
+<style>
+  @page { size: A4; margin: 0; }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: "Hiragino Sans GB", "Heiti SC", "PingFang SC", "STHeiti", "Songti SC", "Microsoft YaHei", Arial, sans-serif;
+    background: #e8e8e8;
+    color: #111827;
+    line-height: 1.55;
+    -webkit-font-smoothing: subpixel-antialiased;
+  }
+
+  .sheet {
+    width: 210mm;
+    height: 297mm;
+    margin: 20px auto;
+    background: #fff;
+    padding: 18px 26px 16px;
+    overflow: hidden;
+    box-shadow: 0 1px 8px rgba(0,0,0,0.1);
+    position: relative;
+    page-break-after: always;
+  }
+
+  .sheet:last-child {
+    page-break-after: auto;
+  }
+
+  @media print {
+    body {
+      background: #fff;
+      width: 210mm;
+      height: 297mm;
+      font-family: "Hiragino Sans GB", "Heiti SC", "PingFang SC", "STHeiti", "Songti SC", "Microsoft YaHei", Arial, sans-serif !important;
+      print-color-adjust: exact;
+      -webkit-print-color-adjust: exact;
+    }
+    .sheet {
+      margin: 0;
+      padding: 18px 26px 16px;
+      box-shadow: none;
+      min-height: auto;
+      height: 297mm;
+      font-family: "Hiragino Sans GB", "Heiti SC", "PingFang SC", "STHeiti", "Songti SC", "Microsoft YaHei", Arial, sans-serif !important;
+    }
+  }
+
+  /* ── Header ── */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid #174A6A;
+  }
+
+  .header-left { flex: 1; }
+
+  .header-top {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+  }
+
+  .name {
+    font-size: 26px;
+    font-weight: 700;
+    color: #111;
+    letter-spacing: 2px;
+    line-height: 1.2;
+  }
+
+  .name-en {
+    font-size: 12px;
+    color: #111827;
+    letter-spacing: 1px;
+  }
+
+  .header-contact {
+    margin-top: 2px;
+    font-size: 13px;
+    color: #111827;
+    line-height: 2.2;
+  }
+
+  .header-contact a {
+    color: #111827;
+    text-decoration: none;
+    vertical-align: baseline;
+  }
+
+  .header-contact .tag {
+    display: inline-block;
+    font-size: 11px;
+    color: #111827;
+    background: #e0edf5;
+    padding: 1px 6px;
+    border-radius: 3px;
+    margin-right: 2px;
+    line-height: 1.4;
+    vertical-align: 1px;
+  }
+
+  .header-contact .sep {
+    color: #94a3b8;
+    margin: 0 4px;
+  }
+
+  .header-info {
+    margin-top: 2px;
+    font-size: 13px;
+    color: #111827;
+    line-height: 2.2;
+  }
+
+  .header-info .sep {
+    color: #94a3b8;
+    margin: 0 4px;
+  }
+
+  .header-info .job-target {
+    color: #174A6A;
+    font-weight: 500;
+  }
+
+  .header-photo {
+    width: 22mm;
+    height: 28mm;
+    object-fit: cover;
+    border-radius: 3px;
+    margin-left: 16px;
+    flex-shrink: 0;
+  }
+
+  /* ── Section ── */
+  .section { margin-bottom: 6px; }
+
+  .section-title {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #fff;
+    letter-spacing: 0.6px;
+    padding: 2px 10px;
+    background: #174A6A;
+    border-radius: 3px;
+    margin-bottom: 8px;
+  }
+
+  /* ── Work Experience ── */
+  .work-item { margin-bottom: 4px; }
+  .work-item:last-child { margin-bottom: 0; }
+
+  .work-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 4px;
+  }
+
+  .work-company {
+    font-size: 14px;
+    font-weight: 600;
+    color: #111;
+  }
+
+  .work-role {
+    font-size: 13px;
+    color: #111827;
+    font-weight: 400;
+  }
+
+  .work-time {
+    font-size: 13px;
+    color: #111827;
+    white-space: nowrap;
+  }
+
+  .work-list {
+    list-style: none;
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .work-list li {
+    font-size: 13px;
+    color: #111827;
+    line-height: 1.65;
+    margin-bottom: 3px;
+    font-weight: 450;
+  }
+
+  /* ── Project ── */
+  .project-group { margin-bottom: 6px; }
+  .project-group:last-child { margin-bottom: 0; }
+
+  .project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 2px;
+  }
+
+  .project-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #111;
+  }
+
+  .project-meta {
+    font-size: 13px;
+    color: #111827;
+    white-space: nowrap;
+  }
+
+  .project-desc {
+    font-size: 13px;
+    color: #111827;
+    margin: 2px 0 3px;
+    line-height: 1.6;
+    padding: 3px 8px;
+    background: #f3f4f6;
+    border-radius: 3px;
+    font-weight: 450;
+  }
+
+  .project-list {
+    list-style: none;
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .project-list li {
+    font-size: 13px;
+    color: #111827;
+    line-height: 1.65;
+    margin-bottom: 3px;
+    font-weight: 450;
+  }
+
+  .kw {
+    font-weight: 600;
+    color: #174A6A;
+    margin-right: 10px;
+  }
+
+  .project-effect {
+    font-size: 13px;
+    color: #111827;
+    line-height: 1.6;
+    padding-left: 8px;
+    border-left: 2px solid #94a3b8;
+    margin-top: 2px;
+    font-weight: 450;
+  }
+
+  .effect-label {
+    font-weight: 600;
+    color: #174A6A;
+  }
+
+  /* ── Bottom Grid ── */
+  .bottom-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 8px;
+  }
+
+  .edu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 4px;
+  }
+
+  .edu-line {
+    font-size: 13px;
+    color: #111827;
+  }
+
+  .edu-school {
+    font-weight: 600;
+    color: #111;
+    font-size: 14px;
+  }
+
+  .edu-detail {
+    color: #111827;
+  }
+
+  .edu-time {
+    font-size: 13px;
+    color: #111827;
+    white-space: nowrap;
+  }
+
+  /* ── Skills ── */
+  .skill-row {
+    margin-bottom: 2px;
+    font-size: 13px;
+    line-height: 1.45;
+  }
+
+  .skill-label {
+    font-weight: 600;
+    color: #174A6A;
+    margin-right: 4px;
+  }
+
+  .skill-items {
+    color: #111827;
+  }
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-left">
+      <div class="header-top">
+        <span class="name">张欣杰</span>
+        <span class="name-en">XINJIE ZHANG</span>
+        <span style="color:#94a3b8;">|</span>
+        <span class="name-en">全日制本科</span>
+      </div>
+      <div class="header-contact">
+        <span class="tag">电话</span>13172918902 <span class="sep">|</span>
+        <span class="tag">邮箱</span><a href="mailto:1278511339@qq.com">1278511339@qq.com</a> <span class="sep">|</span>
+        <span class="tag" style="vertical-align:0;">项目集</span><a href="https://zzzgitdx.github.io/projects/" target="_blank">zzzgitdx.github.io/projects</a>
+      </div>
+      <div class="header-info">
+        B 端产品经理｜0-1 业务系统搭建与优化｜AI 融合传统业务落地｜端到端产品交付
+      </div>
+    </div>
+    <img class="header-photo" src="./pic.jpg" alt="张欣杰">
+  </header>
+
+  <!-- Work Experience -->
+  <section class="section">
+    <div class="section-title">工作经历</div>
+
+    <div class="work-item">
+      <div class="work-header">
+        <div><span class="work-company">清远市利众信息科技有限公司</span> <span class="work-role">｜产品经理</span></div>
+        <span class="work-time">2024.12 - 2026.04</span>
+      </div>
+      <ul class="work-list">
+        <li>负责车辆融资咨询系统和代驾平台两款产品从 0 到 1，独立完成调研、原型、验收和迭代。</li>
+        <li>设计线下获客 + 线上协同模式，梳理六类角色权限，推动产品匹配、AI 提取、来源归因等核心能力落地。</li>
+      </ul>
+    </div>
+
+    <div class="work-item">
+      <div class="work-header">
+        <div><span class="work-company">字节跳动</span> <span class="work-role">｜AI 数据产品实习生</span></div>
+        <span class="work-time">2023.10 - 2023.12</span>
+      </div>
+      <ul class="work-list">
+        <li>参与抖音内容安全 AI 识别优化，负责粤语违规内容标注、规则整理和误报 / 漏报案例分析。</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Project Experience -->
+  <section class="section">
+    <div class="section-title">项目经历</div>
+
+    <!-- Project 1 -->
+    <div class="project-group">
+      <div class="project-header">
+        <span class="project-name">利众客户速录与融资咨询管理系统</span>
+        <span class="project-meta">产品经理 · 2025.02 - 2026.04</span>
+      </div>
+      <div class="project-desc">面向车辆融资咨询企业的线下线上协同系统，覆盖平台、企业主、管理员、客服、合作商、客户六类角色的分层管理。合作商二维码线下获客，客户扫码提交资料，客服认领跟进并匹配产品，企业与平台可追溯来源、过程和转化结果。</div>
+      <ul class="project-list">
+        <li><span class="kw">业务拆解</span>把依赖线下人脉和人工经验的融资咨询链路，拆成合作商获客、客户扫码登记、客服认领跟进、产品准入匹配、转化追踪的标准化流程，六类角色各司其职，线下获客不断链。</li>
+        <li><span class="kw">链路溯源</span>设计合作商专属二维码 + 来源归因机制，客户从扫码到成交的全链路可追溯到人，解决"线索在个人手里、过程在聊天记录里、结果难以复盘"的问题。</li>
+        <li><span class="kw">AI 融合</span>用规则引擎 + LLM 替代人工经验判断，客服粘贴客户描述即可自动提取关键字段并匹配可办理产品，将"靠经验猜"变成结构化筛选。</li>
+      </ul>
+      <div class="project-effect">
+        <div><span class="kw">成效</span>把原本依赖线下人脉和人工经验的咨询业务，变成可分工、可追踪、可复盘的线上化业务流程。</div>
+        <div><span class="kw">项目链接</span><a href="http://www.lizhongxinxikeji.com" target="_blank" style="color:#174A6A;text-decoration:none;">www.lizhongxinxikeji.com</a></div>
+      </div>
+    </div>
+
+    <!-- Project 2 -->
+    <div class="project-group">
+      <div class="project-header">
+        <span class="project-name">利众代驾平台</span>
+        <span class="project-meta">产品经理 · 2024.12 - 2026.04</span>
+      </div>
+      <div class="project-desc">本地代驾 O2O 平台，连接用户下单和司机接单，平台负责调度和运营。围绕司机入驻管理、订单调度流程、用户端体验和运营数据体系，持续迭代优化。</div>
+      <ul class="project-list">
+        <li><span class="kw">O2O 迭代</span>推进司机入驻、订单管理和调度中心迭代，优化派单逻辑和供需调度流程。</li>
+        <li><span class="kw">体验重构</span>统一用户端、司机端页面和线下物料视觉规范，提升业务展示专业度。</li>
+        <li><span class="kw">数据驱动</span>提取订单量、完单率、司机活跃度等关键指标，反哺调度策略和迭代方向。</li>
+      </ul>
+      <div class="project-effect">
+        <div><span class="kw">成效</span>用户端下单流程更顺畅，司机端接单效率提升，清远本地单量明显增长。</div>
+        <div><span class="kw">项目链接</span>微信小程序 - 利众代驾</div>
+      </div>
+    </div>
+
+    <!-- Project 3 -->
+    <div class="project-group">
+      <div class="project-header">
+        <span class="project-name">抖音内容安全 AI 识别优化</span>
+        <span class="project-meta">AI 数据产品实习生 · 2023.10 - 2023.12</span>
+      </div>
+      <div class="project-desc">字节内容审核中台项目，抖音直播粤语违规内容的 AI 自动识别，参与方言敏感词库与 ASR 模型优化。</div>
+      <ul class="project-list">
+        <li><span class="kw">数据标注</span>负责粤语违规内容标注与样本审核，保障模型训练数据质量。</li>
+        <li><span class="kw">规则优化</span>沉淀高频违规特征与标注 SOP，协助分析误报 / 漏报案例，推动规则迭代。</li>
+      </ul>
+      <div class="project-effect"><span class="kw">成效</span>为方言场景模型迭代提供高质量标注样本和规则依据，支持内容安全策略持续优化。</div>
+    </div>
+  </section>
+
+  <!-- Education -->
+  <section class="section">
+    <div class="section-title">教育背景</div>
+    <div class="edu-item">
+      <div class="edu-line"><span class="edu-school">广州商学院</span>｜<span class="edu-detail">软件工程 · 本科</span></div>
+      <span class="edu-time">2022.09 - 2024.06</span>
+    </div>
+    <div class="edu-item">
+      <div class="edu-line"><span class="edu-school">广东农工商职业技术学院</span>｜<span class="edu-detail">大数据技术与应用</span></div>
+      <span class="edu-time">2019.09 - 2022.06</span>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section class="section" style="margin-bottom:0">
+    <div class="section-title">技能与能力</div>
+    <div class="skill-row">
+      <span class="kw">产品能力</span>业务调研、流程梳理、原型设计、需求文档、验收测试、上线迭代
+    </div>
+    <div class="skill-row">
+      <span class="kw">AI / 数据</span>AI 融合传统业务、Prompt 优化、数据标注、规则归因、日志分析
+    </div>
+    <div class="skill-row">
+      <span class="kw">工具协作</span>Axure / Figma / 墨刀、飞书 / Notion / Tower、Claude Code / Codex、Excel、基础 SQL
+    </div>
+  </section>
+
+</div>
+</body>
+</html>

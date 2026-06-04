@@ -518,6 +518,8 @@
     .project-section, .site-footer { padding-left: 20px; padding-right: 20px; }
     .carousel-thumbnail { width: 80px; height: 60px; }
     .carousel-thumbnail-title { font-size: 11px; }
+    .carousel-thumbnails { justify-content: flex-start; padding: 12px; gap: 8px; }
+    .carousel-btn { display: none; }
   }
 
   /* ── Carousel ── */
@@ -621,6 +623,8 @@
     background: #fff;
     border-top: 1px solid #e5e7eb;
     justify-content: center;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
   }
 
   .carousel-thumbnail-item {
@@ -967,9 +971,39 @@ function goToSlide(carouselId, index) {
   updateCarousel(carouselId);
 }
 
+// Swipe support
+function addSwipeSupport(carouselId) {
+  const carousel = document.getElementById(carouselId);
+  if (!carousel) return;
+
+  const inner = carousel.querySelector('.carousel-inner');
+  let startX = 0;
+  let endX = 0;
+
+  inner.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
+  }, { passive: true });
+
+  inner.addEventListener('touchmove', (e) => {
+    endX = e.touches[0].clientX;
+  }, { passive: true });
+
+  inner.addEventListener('touchend', () => {
+    const diff = startX - endX;
+    if (Math.abs(diff) > 50) {
+      if (diff > 0) {
+        nextSlide(carouselId);
+      } else {
+        prevSlide(carouselId);
+      }
+    }
+  });
+}
+
 // Initialize all carousels
 document.addEventListener('DOMContentLoaded', () => {
   initCarousel('lizhong-carousel');
+  addSwipeSupport('lizhong-carousel');
 });
 </script>
 

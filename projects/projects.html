@@ -13,6 +13,10 @@
     box-sizing: border-box;
   }
 
+  html {
+    scroll-padding-top: 56px;
+  }
+
   body {
     font-family: "Hiragino Sans GB", "Heiti SC", "PingFang SC", "STHeiti", "Songti SC", "Microsoft YaHei", Arial, sans-serif;
     background: #ffffff;
@@ -498,7 +502,7 @@
     .hero-nav-link { font-size: 13px; }
     .hero-portrait { flex-shrink: 0; }
     .hero-portrait img { width: 150px; height: 185px; }
-    .section-title { font-size: 24px; }
+    .section-title { font-size: 22px; }
     .project-grid { grid-template-columns: 1fr; }
     .project-tags { gap: 8px; }
     .project-tag { font-size: 13px; padding: 5px 12px; }
@@ -689,6 +693,7 @@
     z-index: 200;
     justify-content: center;
     align-items: center;
+    padding-top: 56px;
   }
 
   .qr-modal-overlay.active {
@@ -701,6 +706,8 @@
     padding: 32px;
     text-align: center;
     max-width: 320px;
+    width: 90%;
+    margin: auto;
     box-shadow: 0 20px 60px rgba(0,0,0,0.2);
   }
 
@@ -761,7 +768,7 @@
         <span class="name-en">XINJIE ZHANG</span>
       </div>
       <div class="hero-contact">
-        <span>1278511339@qq.com</span>
+        <a href="mailto:1278511339@qq.com">1278511339@qq.com</a>
       </div>
       <div class="hero-nav">
         <a href="#project-lizhong" class="hero-nav-link">利众客户速录 &rarr;</a>
@@ -853,7 +860,7 @@
   <div class="project-result">
     <div class="result-label">关键贡献</div>
     <div class="result-content">
-      <p>从 0 到 1 梳理业务流程，明确合作商、客服、企业主、管理员等角色分工，设计线下获客、扫码登记、跟进服务、产品匹配、转化追踪业务闭环，将产品资料结构化并引入 AI 智能匹配，推动权限隔离、数据隔离、通知、日志等上线治理。</p>
+      <p>从 0 到 1 梳理业务流程和角色分工，设计获客、登记、跟进、匹配、转化业务闭环，引入 AI 智能匹配，推动上线治理。</p>
       <ul>
         <li><strong>业务梳理：</strong>从 0 到 1 梳理车辆融资咨询业务流程和角色边界</li>
         <li><strong>闭环设计：</strong>设计客户登记、分配认领、跟进服务、产品匹配、转化追踪业务闭环</li>

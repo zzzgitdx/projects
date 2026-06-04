@@ -17,6 +17,7 @@
     color: #111827;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
   }
 
   /* ── Header ── */
@@ -133,30 +134,6 @@
     font-weight: 400;
   }
 
-  .hero-title {
-    font-size: 16px;
-    color: #174a6a;
-    font-weight: 500;
-    margin-bottom: 16px;
-  }
-
-  .hero-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 16px;
-  }
-
-  .tag {
-    background: #f0f9ff;
-    color: #174a6a;
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-size: 13px;
-    font-weight: 500;
-    border: 1px solid #bae6fd;
-  }
-
   .hero-contact {
     display: flex;
     flex-wrap: wrap;
@@ -171,6 +148,24 @@
   }
 
   .hero-contact a:hover {
+    text-decoration: underline;
+  }
+
+  .hero-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 16px;
+  }
+
+  .hero-nav-link {
+    color: #174a6a;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  .hero-nav-link:hover {
     text-decoration: underline;
   }
 
@@ -350,26 +345,59 @@
 
   /* ── Result ── */
   .project-result {
-    background: #f0f9ff;
-    border-radius: 10px;
+    background: #fff;
+    border-radius: 0 8px 8px 0;
     padding: 20px 24px;
-    border: 1px solid #bae6fd;
+    border-left: 6px solid #007bff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     margin-bottom: 24px;
   }
 
   .result-label {
-    font-size: 13px;
-    font-weight: 600;
-    color: #174a6a;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin-bottom: 8px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 16px;
   }
 
-  .result-text {
-    font-size: 15px;
-    color: #1e40af;
-    line-height: 1.6;
+  .result-content {
+    font-size: 16px;
+    color: #334155;
+    line-height: 1.7;
+  }
+
+  .result-content p {
+    margin-bottom: 12px;
+  }
+
+  .result-content ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .result-content li {
+    padding-left: 0;
+  }
+
+  .result-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 16px;
+  }
+
+  .result-tag {
+    display: inline-block;
+    padding: 6px 16px;
+    background: #f0f9ff;
+    color: #174a6a;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    border: 1px solid #bae6fd;
   }
 
   /* ── Keywords (for 抖音 project) ── */
@@ -435,25 +463,31 @@
   /* ── Responsive ── */
   @media (max-width: 768px) {
     .hero {
-      flex-direction: column;
-      text-align: center;
-      gap: 32px;
-      padding: 60px 20px 40px;
+      gap: 24px;
+      padding: 40px 20px;
+      justify-content: center;
     }
-    .hero-content h1 { font-size: 32px; }
-    .hero-subtitle { font-size: 16px; margin: 0 auto; }
-    .hero-info { margin-top: 20px; }
-    .name-cn { font-size: 24px; }
-    .name-en { font-size: 14px; }
-    .hero-title { font-size: 14px; }
-    .hero-tags { justify-content: center; }
-    .tag { font-size: 12px; padding: 3px 10px; }
-    .hero-contact { justify-content: center; font-size: 13px; }
-    .hero-portrait img { width: 180px; height: 220px; }
+    .hero {
+      gap: 20px;
+      padding: 40px 20px;
+      justify-content: center;
+    }
+    .hero-content { flex: 1; }
+    .hero-content h1 { font-size: 28px; }
+    .hero-info { margin-top: 16px; }
+    .name-cn { font-size: 20px; }
+    .name-en { font-size: 12px; }
+    .hero-contact { font-size: 12px; }
+    .hero-nav { gap: 6px; margin-top: 12px; }
+    .hero-nav-link { font-size: 13px; }
+    .hero-portrait { flex-shrink: 0; }
+    .hero-portrait img { width: 150px; height: 185px; }
     .section-title { font-size: 24px; }
     .project-grid { grid-template-columns: 1fr; }
     .project-tags { gap: 8px; }
     .project-tag { font-size: 13px; padding: 5px 12px; }
+    .result-tags { gap: 8px; }
+    .result-tag { font-size: 13px; padding: 5px 12px; }
     .keyword-grid { grid-template-columns: repeat(2, 1fr); }
     .site-header { padding: 0 20px; }
     .project-section, .site-footer { padding-left: 20px; padding-right: 20px; }
@@ -625,22 +659,18 @@
 <section class="hero">
   <div class="hero-content">
     <h1>项目经历</h1>
-    <p class="hero-subtitle">0-1 业务系统搭建，用产品思维解决真实业务问题</p>
     <div class="hero-info">
       <div class="hero-name">
         <span class="name-cn">张欣杰</span>
         <span class="name-en">XINJIE ZHANG</span>
       </div>
-      <div class="hero-title">产品经理 / AI 产品 / FDE 方向</div>
-      <div class="hero-tags">
-        <span class="tag">车辆融资咨询 CRM</span>
-        <span class="tag">AI 辅助录入</span>
-        <span class="tag">0-1 业务系统</span>
-      </div>
       <div class="hero-contact">
-        <span>13172918902</span>
         <span>1278511339@qq.com</span>
-        <a href="https://zzzgitdx.github.io/resume/" target="_blank">在线简历</a>
+      </div>
+      <div class="hero-nav">
+        <a href="#project-lizhong" class="hero-nav-link">利众客户速录 &rarr;</a>
+        <a href="#project-daijia" class="hero-nav-link">利众代驾 &rarr;</a>
+        <a href="#project-douyin" class="hero-nav-link">抖音内容安全 &rarr;</a>
       </div>
     </div>
   </div>
@@ -650,7 +680,7 @@
 </section>
 
 <!-- Project 1: 利众客户速录 -->
-<section class="project-section">
+<section class="project-section" id="project-lizhong">
   <div class="section-header">
     <h2 class="section-title">利众客户速录与融资咨询管理系统</h2>
     <div class="section-meta"><strong>系统后台：</strong><a href="https://www.lizhongxinxikeji.com" target="_blank">www.lizhongxinxikeji.com</a>｜<strong>H5 登记：</strong><a href="https://www.lizhongxinxikeji.com/h5/" target="_blank">www.lizhongxinxikeji.com/h5/</a></div>
@@ -725,13 +755,27 @@
   </div>
 
   <div class="project-result">
-    <div class="result-label">项目成效</div>
-    <div class="result-text">完成 0-1 MVP 上线，覆盖客户登记、分配、跟进、产品匹配、转化追踪全流程。</div>
+    <div class="result-label">关键贡献</div>
+    <div class="result-content">
+      <p>从 0 到 1 梳理业务流程，明确合作商、客服、企业主、管理员等角色分工，设计线下获客、扫码登记、跟进服务、产品匹配、转化追踪业务闭环，将产品资料结构化并引入 AI 智能匹配，推动权限隔离、数据隔离、通知、日志等上线治理。</p>
+      <ul>
+        <li><strong>业务梳理：</strong>从 0 到 1 梳理车辆融资咨询业务流程和角色边界</li>
+        <li><strong>闭环设计：</strong>设计客户登记、分配认领、跟进服务、产品匹配、转化追踪业务闭环</li>
+        <li><strong>AI 能力：</strong>引入智能匹配，用自然语言解析减少客服重复录入</li>
+        <li><strong>治理推动：</strong>推动来源归因、权限隔离、数据隔离、通知、日志等上线后治理</li>
+      </ul>
+      <div class="result-tags">
+        <span class="result-tag">0-1 搭建</span>
+        <span class="result-tag">业务闭环</span>
+        <span class="result-tag">AI 产品</span>
+        <span class="result-tag">上线治理</span>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- Project 2: 利众代驾 -->
-<section class="project-section">
+<section class="project-section" id="project-daijia">
   <div class="section-header">
     <h2 class="section-title">利众代驾平台</h2>
     <div class="section-meta">产品经理｜2024.12 - 2026.04｜微信小程序 - 利众代驾</div>
@@ -782,7 +826,7 @@
 </section>
 
 <!-- Project 3: 抖音内容安全 -->
-<section class="project-section">
+<section class="project-section" id="project-douyin">
   <div class="section-header">
     <h2 class="section-title">抖音内容安全 AI 识别优化</h2>
     <div class="section-meta">AI 数据产品实习生｜2023.10 - 2023.12｜字节跳动</div>

@@ -77,10 +77,12 @@
     display: flex;
     align-items: center;
     gap: 60px;
+    justify-content: space-between;
   }
 
   .hero-content {
     flex: 1;
+    text-align: left;
   }
 
   .hero-content h1 {
@@ -185,7 +187,7 @@
   }
 
   .section-header {
-    margin-bottom: 40px;
+    margin-bottom: 24px;
   }
 
   .section-title {
@@ -214,8 +216,47 @@
     font-size: 16px;
     color: #334155;
     line-height: 1.7;
-    margin-bottom: 32px;
-    max-width: 800px;
+    margin-bottom: 20px;
+  }
+
+  .project-intro p {
+    margin-bottom: 12px;
+  }
+
+  .project-intro ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .project-intro li {
+    padding-left: 0;
+  }
+
+  .project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 24px;
+  }
+
+  .project-tag {
+    display: inline-block;
+    padding: 6px 16px;
+    background: #f0f9ff;
+    color: #174a6a;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    border: 1px solid #bae6fd;
+    cursor: help;
+    transition: background 0.2s;
+  }
+
+  .project-tag:hover {
+    background: #e0f2fe;
   }
 
   .project-grid {
@@ -411,9 +452,158 @@
     .hero-portrait img { width: 180px; height: 220px; }
     .section-title { font-size: 24px; }
     .project-grid { grid-template-columns: 1fr; }
+    .project-tags { gap: 8px; }
+    .project-tag { font-size: 13px; padding: 5px 12px; }
     .keyword-grid { grid-template-columns: repeat(2, 1fr); }
     .site-header { padding: 0 20px; }
     .project-section, .site-footer { padding-left: 20px; padding-right: 20px; }
+    .carousel-thumbnail { width: 80px; height: 60px; }
+    .carousel-thumbnail-title { font-size: 11px; }
+  }
+
+  /* ── Carousel ── */
+  .carousel {
+    position: relative;
+    margin-bottom: 40px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #e5e7eb;
+    background: #f9fafb;
+  }
+
+  .carousel-inner {
+    display: flex;
+    transition: transform 0.3s ease;
+  }
+
+  .carousel-item {
+    min-width: 100%;
+    position: relative;
+  }
+
+  .carousel-item {
+    min-width: 100%;
+    position: relative;
+    aspect-ratio: 4/2;
+  }
+
+  .carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    background: #fff;
+  }
+
+  .carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.9);
+    border: none;
+    padding: 12px;
+    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    transition: opacity 0.2s, background 0.2s;
+    z-index: 10;
+    opacity: 0;
+  }
+
+  .carousel:hover .carousel-btn {
+    opacity: 1;
+  }
+
+  .carousel-btn:hover {
+    background: #fff;
+  }
+
+  .carousel-btn-prev {
+    left: 16px;
+  }
+
+  .carousel-btn-next {
+    right: 16px;
+  }
+
+  .carousel-btn svg {
+    width: 20px;
+    height: 20px;
+    fill: #334155;
+  }
+
+  .carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px;
+    background: #fff;
+    border-top: 1px solid #e5e7eb;
+  }
+
+  .carousel-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #cbd5e1;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  .carousel-dot.active {
+    background: #174a6a;
+  }
+
+  .carousel-thumbnails {
+    display: flex;
+    gap: 12px;
+    padding: 16px;
+    background: #fff;
+    border-top: 1px solid #e5e7eb;
+    justify-content: center;
+  }
+
+  .carousel-thumbnail-item {
+    flex-shrink: 0;
+    text-align: center;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: opacity 0.2s;
+  }
+
+  .carousel-thumbnail-item:hover {
+    opacity: 0.8;
+  }
+
+  .carousel-thumbnail-item.active {
+    opacity: 1;
+  }
+
+  .carousel-thumbnail {
+    width: 120px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 2px solid transparent;
+    transition: border-color 0.2s;
+    display: block;
+  }
+
+  .carousel-thumbnail-item.active .carousel-thumbnail {
+    border-color: #174a6a;
+  }
+
+  .carousel-thumbnail-title {
+    display: block;
+    font-size: 12px;
+    color: #475569;
+    margin-top: 6px;
+  }
+
+  .carousel-thumbnail-item.active .carousel-thumbnail-title {
+    color: #174a6a;
+    font-weight: 500;
   }
 </style>
 </head>
@@ -463,52 +653,74 @@
 <section class="project-section">
   <div class="section-header">
     <h2 class="section-title">利众客户速录与融资咨询管理系统</h2>
-    <div class="section-meta">产品经理｜2025.02 - 2026.04｜<a href="http://www.lizhongxinxikeji.com" target="_blank">www.lizhongxinxikeji.com</a></div>
+    <div class="section-meta"><strong>系统后台：</strong><a href="https://www.lizhongxinxikeji.com" target="_blank">www.lizhongxinxikeji.com</a>｜<strong>H5 登记：</strong><a href="https://www.lizhongxinxikeji.com/h5/" target="_blank">www.lizhongxinxikeji.com/h5/</a></div>
   </div>
 
   <div class="project-intro">
-    面向车辆融资咨询企业的内部业务系统，解决客户信息分散、跟进不透明、产品准入依赖人工经验的问题。
+    <p>面向车辆融资咨询企业，把线下获客和线上协同结合起来。合作商在线下（停车场、汽修店、二手车门店等）推广获客，客户扫码登记，客服线上跟进，企业维护产品和人员；系统让每个角色各司其职，把客户来源、服务过程和转化结果沉淀为可追溯的业务链路。</p>
+    <ul>
+      <li><strong>多角色协同：</strong>企业管理全局，管理员发展团队，合作商发掘客户，客服跟进转化</li>
+      <li><strong>客户登记：</strong>合作商通过物料二维码获客，客户扫码进入 H5 提交资料，解决信息分散问题</li>
+      <li><strong>客服跟进：</strong>从认领到评估到成交全流程跟进，产品准入条件结构化</li>
+      <li><strong>智能匹配：</strong>AI 解析客户描述，智能匹配可办理产品</li>
+      <li><strong>消息触达：</strong>打通系统、企微、微信三方通知，用户无需登录即可接收关键消息</li>
+      <li><strong>链路溯源：</strong>客户来源、跟进状态、转化结果全链路可追溯</li>
+      <li><strong>数据隔离：</strong>多角色权限隔离，企业数据安全</li>
+    </ul>
   </div>
 
-  <div class="project-grid">
-    <div class="project-card">
-      <div class="card-title">业务拆解</div>
-      <div class="card-content">合作商获客→客户登记→客服跟进→产品匹配→转化追踪，六类角色各司其职。</div>
-    </div>
-    <div class="project-card">
-      <div class="card-title">链路溯源</div>
-      <div class="card-content">合作商专属二维码 + 来源归因，全链路可追溯到人。</div>
-    </div>
-    <div class="project-card">
-      <div class="card-title">AI 融合</div>
-      <div class="card-content">规则引擎 + LLM 自动提取字段并匹配可办理产品。</div>
-    </div>
-    <div class="project-card">
-      <div class="card-title">角色协同</div>
-      <div class="card-content">六类角色权限隔离，企业数据隔离，减少重复跟进。</div>
-    </div>
+  <div class="project-tags">
+    <span class="project-tag">CRM</span>
+    <span class="project-tag">车辆融资咨询</span>
+    <span class="project-tag">SaaS</span>
+    <span class="project-tag">客户管理</span>
+    <span class="project-tag">AI 解析客户</span>
+    <span class="project-tag">智能匹配产品</span>
+    <span class="project-tag">多角色协同</span>
+    <span class="project-tag">链路溯源</span>
+    <span class="project-tag">数据隔离</span>
+    <span class="project-tag">企微触达</span>
   </div>
 
-  <!-- Project Images -->
-  <div class="image-gallery gallery-main">
-    <div class="gallery-item">
-      <img src="./assets/lizhong-01.svg" alt="H5 客户登记">
-      <div class="gallery-caption">H5 客户登记</div>
+  <!-- Project Images Carousel -->
+  <div class="carousel" id="lizhong-carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item">
+        <img src="./assets/lizhong-01.svg" alt="H5 客户登记">
+      </div>
+      <div class="carousel-item">
+        <img src="./assets/lizhong-02.svg" alt="客户管理">
+      </div>
+      <div class="carousel-item">
+        <img src="./assets/lizhong-03.svg" alt="产品库">
+      </div>
+      <div class="carousel-item">
+        <img src="./assets/lizhong-04.svg" alt="匹配工单">
+      </div>
     </div>
-  </div>
-
-  <div class="image-gallery gallery-grid">
-    <div class="gallery-item">
-      <img src="./assets/lizhong-02.svg" alt="客户管理">
-      <div class="gallery-caption">客户管理</div>
-    </div>
-    <div class="gallery-item">
-      <img src="./assets/lizhong-03.svg" alt="产品库">
-      <div class="gallery-caption">产品库</div>
-    </div>
-    <div class="gallery-item">
-      <img src="./assets/lizhong-04.svg" alt="匹配工单">
-      <div class="gallery-caption">匹配工单</div>
+    <button class="carousel-btn carousel-btn-prev" onclick="prevSlide('lizhong-carousel')">
+      <svg viewBox="0 0 24 24"><path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6z"/></svg>
+    </button>
+    <button class="carousel-btn carousel-btn-next" onclick="nextSlide('lizhong-carousel')">
+      <svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
+    </button>
+    <div class="carousel-thumbnails">
+      <div class="carousel-thumbnail-item active" onclick="goToSlide('lizhong-carousel', 0)">
+        <img src="./assets/lizhong-01.svg" alt="H5 客户登记" class="carousel-thumbnail">
+        <span class="carousel-thumbnail-title">H5 客户登记</span>
+      </div>
+      <div class="carousel-thumbnail-item" onclick="goToSlide('lizhong-carousel', 1)">
+        <img src="./assets/lizhong-02.svg" alt="客户管理" class="carousel-thumbnail">
+        <span class="carousel-thumbnail-title">客户管理</span>
+      </div>
+      <div class="carousel-thumbnail-item" onclick="goToSlide('lizhong-carousel', 2)">
+        <img src="./assets/lizhong-03.svg" alt="产品库" class="carousel-thumbnail">
+        <span class="carousel-thumbnail-title">产品库</span>
+      </div>
+      <div class="carousel-thumbnail-item" onclick="goToSlide('lizhong-carousel', 3)">
+        <img src="./assets/lizhong-04.svg" alt="匹配工单" class="carousel-thumbnail">
+        <span class="carousel-thumbnail-title">匹配工单</span>
+      </div>
     </div>
   </div>
 
@@ -614,6 +826,64 @@
     <a href="mailto:1278511339@qq.com">联系我</a>
   </div>
 </footer>
+
+<script>
+// Carousel functionality
+const carouselStates = {};
+
+function initCarousel(carouselId) {
+  const carousel = document.getElementById(carouselId);
+  if (!carousel) return;
+
+  const inner = carousel.querySelector('.carousel-inner');
+  const items = carousel.querySelectorAll('.carousel-item');
+  const thumbnails = carousel.querySelectorAll('.carousel-thumbnail-item');
+
+  carouselStates[carouselId] = {
+    currentSlide: 0,
+    totalSlides: items.length
+  };
+
+  updateCarousel(carouselId);
+}
+
+function updateCarousel(carouselId) {
+  const carousel = document.getElementById(carouselId);
+  if (!carousel) return;
+
+  const state = carouselStates[carouselId];
+  const inner = carousel.querySelector('.carousel-inner');
+  const thumbnails = carousel.querySelectorAll('.carousel-thumbnail-item');
+
+  inner.style.transform = `translateX(-${state.currentSlide * 100}%)`;
+
+  thumbnails.forEach((thumb, index) => {
+    thumb.classList.toggle('active', index === state.currentSlide);
+  });
+}
+
+function nextSlide(carouselId) {
+  const state = carouselStates[carouselId];
+  state.currentSlide = (state.currentSlide + 1) % state.totalSlides;
+  updateCarousel(carouselId);
+}
+
+function prevSlide(carouselId) {
+  const state = carouselStates[carouselId];
+  state.currentSlide = (state.currentSlide - 1 + state.totalSlides) % state.totalSlides;
+  updateCarousel(carouselId);
+}
+
+function goToSlide(carouselId, index) {
+  carouselStates[carouselId].currentSlide = index;
+  updateCarousel(carouselId);
+}
+
+// Initialize all carousels
+document.addEventListener('DOMContentLoaded', () => {
+  initCarousel('lizhong-carousel');
+});
+</script>
 
 </body>
 </html>

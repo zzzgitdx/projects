@@ -680,6 +680,52 @@
     font-weight: 500;
   }
 
+  /* ── Skeleton Loading ── */
+  .carousel-item,
+  .carousel-thumbnail-item,
+  .hero-portrait {
+    background: #e2e8f0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .carousel-item::after,
+  .carousel-thumbnail-item::after,
+  .hero-portrait::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    animation: shimmer 1.5s infinite;
+    z-index: 1;
+  }
+
+  @keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+  }
+
+  .carousel-item img,
+  .carousel-thumbnail,
+  .hero-portrait img {
+    opacity: 0;
+    transition: opacity 0.3s;
+    position: relative;
+    z-index: 2;
+  }
+
+  .carousel-item img.loaded,
+  .carousel-thumbnail.loaded,
+  .hero-portrait img.loaded {
+    opacity: 1;
+  }
+
+  .carousel-item:has(img.loaded)::after,
+  .carousel-thumbnail-item:has(img.loaded)::after,
+  .hero-portrait:has(img.loaded)::after {
+    display: none;
+  }
+
   /* ── QR Code Modal ── */
   .qr-modal-overlay {
     display: none;
@@ -1132,12 +1178,25 @@ function addSwipeSupport(carouselId) {
   });
 }
 
+// Image skeleton loading
+function initImageLoading() {
+  document.querySelectorAll('.carousel-item img, .carousel-thumbnail, .hero-portrait img').forEach(img => {
+    if (img.complete) {
+      img.classList.add('loaded');
+    } else {
+      img.addEventListener('load', () => img.classList.add('loaded'));
+      img.addEventListener('error', () => img.classList.add('loaded'));
+    }
+  });
+}
+
 // Initialize all carousels
 document.addEventListener('DOMContentLoaded', () => {
   initCarousel('lizhong-carousel');
   addSwipeSupport('lizhong-carousel');
   initCarousel('daijia-carousel');
   addSwipeSupport('daijia-carousel');
+  initImageLoading();
 });
 </script>
 

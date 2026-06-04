@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="760" viewBox="0 0 420 760">
+  <rect width="420" height="760" fill="#f5f5f7"/>
+  <rect x="38" y="24" width="344" height="712" rx="46" fill="#ffffff" stroke="#d2d2d7"/>
+  <rect x="164" y="48" width="92" height="8" rx="4" fill="#d2d2d7"/>
+  <text x="78" y="118" font-family="PingFang SC, Microsoft YaHei, Arial" font-size="26" font-weight="700" fill="#1d1d1f">订单调度</text>
+  <text x="78" y="148" font-family="PingFang SC, Microsoft YaHei, Arial" font-size="14" fill="#6e6e73">接单 / 到达 / 完成</text>
+  <line x1="112" y1="216" x2="112" y2="548" stroke="#d2d2d7" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="112" cy="236" r="18" fill="#0066cc"/>
+  <rect x="146" y="208" width="196" height="70" rx="20" fill="#fbfbfd" stroke="#e5e7eb"/>
+  <rect x="170" y="232" width="118" height="12" rx="6" fill="#1d1d1f"/>
+  <rect x="170" y="254" width="78" height="10" rx="5" fill="#e8e8ed"/>
+  <circle cx="112" cy="354" r="18" fill="#2f7d5f"/>
+  <rect x="146" y="326" width="196" height="70" rx="20" fill="#fbfbfd" stroke="#e5e7eb"/>
+  <rect x="170" y="350" width="118" height="12" rx="6" fill="#1d1d1f"/>
+  <rect x="170" y="372" width="78" height="10" rx="5" fill="#e8e8ed"/>
+  <circle cx="112" cy="472" r="18" fill="#f5b046"/>
+  <rect x="146" y="444" width="196" height="70" rx="20" fill="#fbfbfd" stroke="#e5e7eb"/>
+  <rect x="170" y="468" width="118" height="12" rx="6" fill="#1d1d1f"/>
+  <rect x="170" y="490" width="78" height="10" rx="5" fill="#e8e8ed"/>
+  <text x="210" y="692" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, Arial" font-size="11" fill="#a1a1a6">移动端线框占位</text>
+</svg>

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="360" viewBox="0 0 500 360">
+  <rect width="500" height="360" fill="#f5f5f7"/>
+  <rect x="18" y="18" width="464" height="324" rx="22" fill="#ffffff" stroke="#d2d2d7"/>
+  <text x="42" y="58" font-family="PingFang SC, Microsoft YaHei, Arial" font-size="18" font-weight="700" fill="#1d1d1f">产品匹配工单</text>
+  <rect x="42" y="88" width="176" height="232" rx="18" fill="#fbfbfd" stroke="#e5e7eb"/>
+  <text x="64" y="122" font-family="PingFang SC, Microsoft YaHei, Arial" font-size="13" font-weight="700" fill="#424245">客户条件</text>
+  <rect x="64" y="148" width="120" height="12" rx="6" fill="#e8e8ed"/>
+  <rect x="64" y="180" width="96" height="12" rx="6" fill="#e8e8ed"/>
+  <rect x="64" y="212" width="134" height="12" rx="6" fill="#e8e8ed"/>
+  <rect x="64" y="256" width="112" height="30" rx="15" fill="#0066cc"/>
+  <rect x="244" y="88" width="214" height="72" rx="18" fill="#fbfbfd" stroke="#e5e7eb"/>
+  <rect x="266" y="112" width="86" height="12" rx="6" fill="#dcefe7"/>
+  <rect x="266" y="136" width="154" height="10" rx="5" fill="#e8e8ed"/>
+  <rect x="244" y="184" width="214" height="72" rx="18" fill="#fbfbfd" stroke="#e5e7eb"/>
+  <rect x="266" y="208" width="86" height="12" rx="6" fill="#d8e7fb"/>
+  <rect x="266" y="232" width="154" height="10" rx="5" fill="#e8e8ed"/>
+  <rect x="244" y="280" width="214" height="42" rx="18" fill="#fbfbfd" stroke="#e5e7eb"/>
+  <rect x="266" y="297" width="154" height="10" rx="5" fill="#f5e2c7"/>
+  <text x="250" y="342" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, Arial" font-size="10" fill="#a1a1a6">界面线框占位</text>
+</svg>

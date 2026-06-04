@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="360" viewBox="0 0 500 360">
+  <rect width="500" height="360" fill="#f5f5f7"/>
+  <rect x="18" y="18" width="464" height="324" rx="22" fill="#ffffff" stroke="#d2d2d7"/>
+  <text x="42" y="58" font-family="PingFang SC, Microsoft YaHei, Arial" font-size="18" font-weight="700" fill="#1d1d1f">融资产品库</text>
+  <rect x="338" y="38" width="112" height="28" rx="14" fill="#0066cc"/>
+  <text x="394" y="57" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, Arial" font-size="12" font-weight="700" fill="#ffffff">新增产品</text>
+  <rect x="42" y="92" width="132" height="206" rx="18" fill="#fbfbfd" stroke="#e5e7eb"/>
+  <rect x="62" y="116" width="70" height="12" rx="6" fill="#d8e7fb"/>
+  <rect x="62" y="150" width="92" height="10" rx="5" fill="#e8e8ed"/>
+  <rect x="62" y="176" width="78" height="10" rx="5" fill="#e8e8ed"/>
+  <rect x="62" y="216" width="86" height="26" rx="13" fill="#dcefe7"/>
+  <rect x="194" y="92" width="132" height="206" rx="18" fill="#fbfbfd" stroke="#e5e7eb"/>
+  <rect x="214" y="116" width="70" height="12" rx="6" fill="#f5e2c7"/>
+  <rect x="214" y="150" width="92" height="10" rx="5" fill="#e8e8ed"/>
+  <rect x="214" y="176" width="78" height="10" rx="5" fill="#e8e8ed"/>
+  <rect x="214" y="216" width="86" height="26" rx="13" fill="#d8e7fb"/>
+  <rect x="346" y="92" width="132" height="206" rx="18" fill="#fbfbfd" stroke="#e5e7eb"/>
+  <rect x="366" y="116" width="70" height="12" rx="6" fill="#dcefe7"/>
+  <rect x="366" y="150" width="92" height="10" rx="5" fill="#e8e8ed"/>
+  <rect x="366" y="176" width="78" height="10" rx="5" fill="#e8e8ed"/>
+  <rect x="366" y="216" width="86" height="26" rx="13" fill="#f5e2c7"/>
+  <text x="250" y="326" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, Arial" font-size="10" fill="#a1a1a6">界面线框占位</text>
+</svg>

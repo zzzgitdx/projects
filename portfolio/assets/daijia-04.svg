@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="760" viewBox="0 0 420 760">
+  <rect width="420" height="760" fill="#f5f5f7"/>
+  <rect x="38" y="24" width="344" height="712" rx="46" fill="#ffffff" stroke="#d2d2d7"/>
+  <rect x="164" y="48" width="92" height="8" rx="4" fill="#d2d2d7"/>
+  <text x="78" y="118" font-family="PingFang SC, Microsoft YaHei, Arial" font-size="26" font-weight="700" fill="#1d1d1f">运营数据</text>
+  <rect x="78" y="160" width="120" height="86" rx="22" fill="#f5f5f7"/>
+  <text x="102" y="199" font-family="PingFang SC, Microsoft YaHei, Arial" font-size="24" font-weight="700" fill="#1d1d1f">128</text>
+  <rect x="224" y="160" width="118" height="86" rx="22" fill="#f5f5f7"/>
+  <text x="248" y="199" font-family="PingFang SC, Microsoft YaHei, Arial" font-size="24" font-weight="700" fill="#1d1d1f">92%</text>
+  <rect x="78" y="286" width="264" height="176" rx="24" fill="#fbfbfd" stroke="#e5e7eb"/>
+  <path d="M104 408 L150 382 L194 398 L236 344 L302 326" fill="none" stroke="#0066cc" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="78" y="500" width="264" height="86" rx="22" fill="#fbfbfd" stroke="#e5e7eb"/>
+  <rect x="104" y="532" width="184" height="12" rx="6" fill="#e8e8ed"/>
+  <rect x="104" y="558" width="132" height="12" rx="6" fill="#dcefe7"/>
+  <text x="210" y="692" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, Arial" font-size="11" fill="#a1a1a6">移动端线框占位</text>
+</svg>

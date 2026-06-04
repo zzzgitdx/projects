@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>项目经历｜张欣杰</title>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: "Hiragino Sans GB", "Heiti SC", "PingFang SC", "STHeiti", "Songti SC", "Microsoft YaHei", Arial, sans-serif;
+    background: #ffffff;
+    color: #111827;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── Header ── */
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid #e5e7eb;
+    padding: 0 40px;
+  }
+
+  .header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 56px;
+  }
+
+  .header-logo {
+    font-size: 16px;
+    font-weight: 600;
+    color: #111;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+  }
+
+  .header-nav {
+    display: flex;
+    gap: 28px;
+  }
+
+  .header-nav a {
+    font-size: 14px;
+    color: #334155;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .header-nav a:hover {
+    color: #111;
+  }
+
+  .header-nav a.active {
+    color: #174a6a;
+    font-weight: 500;
+  }
+
+  /* ── Hero ── */
+  .hero {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 40px 60px;
+    display: flex;
+    align-items: center;
+    gap: 60px;
+  }
+
+  .hero-content {
+    flex: 1;
+  }
+
+  .hero-content h1 {
+    font-size: 42px;
+    font-weight: 700;
+    color: #111;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+  }
+
+  .hero-content p {
+    font-size: 18px;
+    color: #334155;
+    max-width: 600px;
+  }
+
+  .hero-portrait {
+    flex-shrink: 0;
+  }
+
+  .hero-portrait img {
+    width: 240px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    border: 3px solid #fff;
+  }
+
+  /* ── Section ── */
+  .project-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 40px;
+    border-top: 1px solid #f1f5f9;
+  }
+
+  .project-section:first-of-type {
+    border-top: none;
+  }
+
+  .section-header {
+    margin-bottom: 40px;
+  }
+
+  .section-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 8px;
+  }
+
+  .section-meta {
+    font-size: 14px;
+    color: #475569;
+  }
+
+  .section-meta a {
+    color: #174a6a;
+    text-decoration: none;
+  }
+
+  .section-meta a:hover {
+    text-decoration: underline;
+  }
+
+  /* ── Project Content ── */
+  .project-intro {
+    font-size: 16px;
+    color: #334155;
+    line-height: 1.7;
+    margin-bottom: 32px;
+    max-width: 800px;
+  }
+
+  .project-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 40px;
+  }
+
+  .project-card {
+    background: #f9fafb;
+    border-radius: 12px;
+    padding: 24px;
+    border: 1px solid #e5e7eb;
+  }
+
+  .card-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #111;
+    margin-bottom: 12px;
+  }
+
+  .card-content {
+    font-size: 14px;
+    color: #334155;
+    line-height: 1.6;
+  }
+
+  .card-content ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .card-content li {
+    padding-left: 16px;
+    position: relative;
+  }
+
+  .card-content li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #94a3b8;
+  }
+
+  /* ── Image Gallery ── */
+  .image-gallery {
+    display: grid;
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+
+  .gallery-main {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+
+  .gallery-item {
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #e5e7eb;
+    background: #f9fafb;
+  }
+
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .gallery-caption {
+    padding: 10px 14px;
+    font-size: 13px;
+    color: #475569;
+    text-align: center;
+    background: #ffffff;
+    border-top: 1px solid #e5e7eb;
+  }
+
+  /* ── Result ── */
+  .project-result {
+    background: #f0f9ff;
+    border-radius: 10px;
+    padding: 20px 24px;
+    border: 1px solid #bae6fd;
+    margin-bottom: 24px;
+  }
+
+  .result-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #174a6a;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+  }
+
+  .result-text {
+    font-size: 15px;
+    color: #1e40af;
+    line-height: 1.6;
+  }
+
+  /* ── Keywords (for 抖音 project) ── */
+  .keyword-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+
+  .keyword-card {
+    background: #f9fafb;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #e5e7eb;
+  }
+
+  .keyword-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #111;
+    margin-bottom: 6px;
+  }
+
+  .keyword-desc {
+    font-size: 12px;
+    color: #475569;
+    line-height: 1.4;
+  }
+
+  /* ── Footer ── */
+  .site-footer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px;
+    border-top: 1px solid #e5e7eb;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-info {
+    font-size: 13px;
+    color: #475569;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 20px;
+  }
+
+  .footer-links a {
+    font-size: 13px;
+    color: #174a6a;
+    text-decoration: none;
+  }
+
+  .footer-links a:hover {
+    text-decoration: underline;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 768px) {
+    .hero {
+      flex-direction: column;
+      text-align: center;
+      gap: 32px;
+      padding: 60px 20px 40px;
+    }
+    .hero-content h1 { font-size: 32px; }
+    .hero-content p { font-size: 16px; margin: 0 auto; }
+    .hero-portrait img { width: 180px; height: 220px; }
+    .section-title { font-size: 24px; }
+    .project-grid { grid-template-columns: 1fr; }
+    .keyword-grid { grid-template-columns: repeat(2, 1fr); }
+    .site-header { padding: 0 20px; }
+    .project-section, .site-footer { padding-left: 20px; padding-right: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="#" class="header-logo">张欣杰</a>
+    <nav class="header-nav">
+      <a href="./portfolio.html">首页</a>
+      <a href="./projects.html" class="active">项目经历</a>
+      <a href="https://zzzgitdx.github.io/resume/" target="_blank">在线简历</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>项目经历</h1>
+    <p>0-1 业务系统搭建，用产品思维解决真实业务问题</p>
+  </div>
+  <div class="hero-portrait">
+    <img src="./pic3-compressed.jpg" alt="张欣杰">
+  </div>
+</section>
+
+<!-- Project 1: 利众客户速录 -->
+<section class="project-section">
+  <div class="section-header">
+    <h2 class="section-title">利众客户速录与融资咨询管理系统</h2>
+    <div class="section-meta">产品经理｜2025.02 - 2026.04｜<a href="http://www.lizhongxinxikeji.com" target="_blank">www.lizhongxinxikeji.com</a></div>
+  </div>
+
+  <div class="project-intro">
+    面向车辆融资咨询企业的内部业务系统，解决客户信息分散、跟进不透明、产品准入依赖人工经验的问题。
+  </div>
+
+  <div class="project-grid">
+    <div class="project-card">
+      <div class="card-title">业务拆解</div>
+      <div class="card-content">合作商获客→客户登记→客服跟进→产品匹配→转化追踪，六类角色各司其职。</div>
+    </div>
+    <div class="project-card">
+      <div class="card-title">链路溯源</div>
+      <div class="card-content">合作商专属二维码 + 来源归因，全链路可追溯到人。</div>
+    </div>
+    <div class="project-card">
+      <div class="card-title">AI 融合</div>
+      <div class="card-content">规则引擎 + LLM 自动提取字段并匹配可办理产品。</div>
+    </div>
+    <div class="project-card">
+      <div class="card-title">角色协同</div>
+      <div class="card-content">六类角色权限隔离，企业数据隔离，减少重复跟进。</div>
+    </div>
+  </div>
+
+  <!-- Project Images -->
+  <div class="image-gallery gallery-main">
+    <div class="gallery-item">
+      <img src="./assets/lizhong-01.svg" alt="H5 客户登记">
+      <div class="gallery-caption">H5 客户登记</div>
+    </div>
+  </div>
+
+  <div class="image-gallery gallery-grid">
+    <div class="gallery-item">
+      <img src="./assets/lizhong-02.svg" alt="客户管理">
+      <div class="gallery-caption">客户管理</div>
+    </div>
+    <div class="gallery-item">
+      <img src="./assets/lizhong-03.svg" alt="产品库">
+      <div class="gallery-caption">产品库</div>
+    </div>
+    <div class="gallery-item">
+      <img src="./assets/lizhong-04.svg" alt="匹配工单">
+      <div class="gallery-caption">匹配工单</div>
+    </div>
+  </div>
+
+  <div class="project-result">
+    <div class="result-label">项目成效</div>
+    <div class="result-text">完成 0-1 MVP 上线，覆盖客户登记、分配、跟进、产品匹配、转化追踪全流程。</div>
+  </div>
+</section>
+
+<!-- Project 2: 利众代驾 -->
+<section class="project-section">
+  <div class="section-header">
+    <h2 class="section-title">利众代驾平台</h2>
+    <div class="section-meta">产品经理｜2024.12 - 2026.04｜微信小程序 - 利众代驾</div>
+  </div>
+
+  <div class="project-intro">
+    本地代驾 O2O 平台，连接用户下单与司机接单，围绕司机管理、订单调度、页面体验持续迭代。
+  </div>
+
+  <div class="project-grid">
+    <div class="project-card">
+      <div class="card-title">O2O 迭代</div>
+      <div class="card-content">司机入驻、订单管理、调度中心迭代，优化派单逻辑。</div>
+    </div>
+    <div class="project-card">
+      <div class="card-title">体验重构</div>
+      <div class="card-content">统一用户端、司机端视觉规范，提升专业度和转化。</div>
+    </div>
+    <div class="project-card">
+      <div class="card-title">数据驱动</div>
+      <div class="card-content">提取订单量、完单率、司机活跃度等指标，反哺调度策略。</div>
+    </div>
+    <div class="project-card">
+      <div class="card-title">项目成效</div>
+      <div class="card-content">下单更顺畅，接单效率提升，本地单量增长。</div>
+    </div>
+  </div>
+
+  <!-- Project Images -->
+  <div class="image-gallery gallery-grid">
+    <div class="gallery-item">
+      <img src="./assets/daijia-01.svg" alt="代驾首页">
+      <div class="gallery-caption">代驾首页</div>
+    </div>
+    <div class="gallery-item">
+      <img src="./assets/daijia-02.svg" alt="司机管理">
+      <div class="gallery-caption">司机管理</div>
+    </div>
+    <div class="gallery-item">
+      <img src="./assets/daijia-03.svg" alt="订单调度">
+      <div class="gallery-caption">订单调度</div>
+    </div>
+    <div class="gallery-item">
+      <img src="./assets/daijia-04.svg" alt="运营数据">
+      <div class="gallery-caption">运营数据</div>
+    </div>
+  </div>
+</section>
+
+<!-- Project 3: 抖音内容安全 -->
+<section class="project-section">
+  <div class="section-header">
+    <h2 class="section-title">抖音内容安全 AI 识别优化</h2>
+    <div class="section-meta">AI 数据产品实习生｜2023.10 - 2023.12｜字节跳动</div>
+  </div>
+
+  <div class="project-intro">
+    抖音粤语直播内容安全场景，参与方言敏感词库与 ASR 模型优化。
+  </div>
+
+  <div class="keyword-grid">
+    <div class="keyword-card">
+      <div class="keyword-title">粤语方言</div>
+      <div class="keyword-desc">粤语违规内容标注</div>
+    </div>
+    <div class="keyword-card">
+      <div class="keyword-title">ASR 识别</div>
+      <div class="keyword-desc">ASR 模型训练数据</div>
+    </div>
+    <div class="keyword-card">
+      <div class="keyword-title">标注 SOP</div>
+      <div class="keyword-desc">高频违规特征与标注规范</div>
+    </div>
+    <div class="keyword-card">
+      <div class="keyword-title">误报漏报</div>
+      <div class="keyword-desc">误报漏报案例分析</div>
+    </div>
+  </div>
+
+  <div class="project-result">
+    <div class="result-label">项目成效</div>
+    <div class="result-text">提供高质量标注样本和规则依据，支持模型迭代优化。</div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="footer-info">© 2024 张欣杰</div>
+  <div class="footer-links">
+    <a href="./portfolio.html">首页</a>
+    <a href="https://zzzgitdx.github.io/resume/" target="_blank">在线简历</a>
+    <a href="mailto:1278511339@qq.com">联系我</a>
+  </div>
+</footer>
+
+</body>
+</html>

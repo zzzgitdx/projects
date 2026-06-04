@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="360" viewBox="0 0 500 360">
+  <rect width="500" height="360" fill="#f5f5f7"/>
+  <rect x="18" y="18" width="464" height="324" rx="22" fill="#ffffff" stroke="#d2d2d7"/>
+  <rect x="18" y="18" width="96" height="324" rx="22" fill="#1d1d1f"/>
+  <text x="43" y="56" font-family="PingFang SC, Microsoft YaHei, Arial" font-size="14" font-weight="700" fill="#f5f5f7">客户</text>
+  <rect x="38" y="86" width="54" height="10" rx="5" fill="#86868b"/>
+  <rect x="38" y="118" width="54" height="10" rx="5" fill="#86868b"/>
+  <rect x="38" y="150" width="54" height="10" rx="5" fill="#0066cc"/>
+  <text x="144" y="58" font-family="PingFang SC, Microsoft YaHei, Arial" font-size="18" font-weight="700" fill="#1d1d1f">客户管理与跟进</text>
+  <rect x="144" y="82" width="300" height="32" rx="12" fill="#f5f5f7"/>
+  <rect x="144" y="138" width="330" height="42" rx="12" fill="#fbfbfd" stroke="#e5e7eb"/>
+  <rect x="160" y="153" width="80" height="12" rx="6" fill="#d8e7fb"/>
+  <rect x="260" y="153" width="92" height="12" rx="6" fill="#e8e8ed"/>
+  <rect x="382" y="149" width="46" height="20" rx="10" fill="#dcefe7"/>
+  <rect x="144" y="198" width="330" height="42" rx="12" fill="#fbfbfd" stroke="#e5e7eb"/>
+  <rect x="160" y="213" width="80" height="12" rx="6" fill="#f5e2c7"/>
+  <rect x="260" y="213" width="92" height="12" rx="6" fill="#e8e8ed"/>
+  <rect x="382" y="209" width="46" height="20" rx="10" fill="#d8e7fb"/>
+  <rect x="144" y="258" width="330" height="42" rx="12" fill="#fbfbfd" stroke="#e5e7eb"/>
+  <rect x="160" y="273" width="80" height="12" rx="6" fill="#dcefe7"/>
+  <rect x="260" y="273" width="92" height="12" rx="6" fill="#e8e8ed"/>
+  <rect x="382" y="269" width="46" height="20" rx="10" fill="#f5e2c7"/>
+  <text x="250" y="326" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, Arial" font-size="10" fill="#a1a1a6">界面线框占位</text>
+</svg>

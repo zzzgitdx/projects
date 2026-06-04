@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="760" viewBox="0 0 420 760">
+  <rect width="420" height="760" fill="#f5f5f7"/>
+  <rect x="38" y="24" width="344" height="712" rx="46" fill="#ffffff" stroke="#d2d2d7"/>
+  <rect x="164" y="48" width="92" height="8" rx="4" fill="#d2d2d7"/>
+  <text x="78" y="118" font-family="PingFang SC, Microsoft YaHei, Arial" font-size="26" font-weight="700" fill="#1d1d1f">代驾首页</text>
+  <text x="78" y="148" font-family="PingFang SC, Microsoft YaHei, Arial" font-size="14" fill="#6e6e73">快速下单 / 服务进度</text>
+  <rect x="78" y="184" width="264" height="150" rx="24" fill="#f5f5f7"/>
+  <path d="M98 278 C150 210, 206 306, 322 228" fill="none" stroke="#0066cc" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="116" cy="258" r="10" fill="#2f7d5f"/>
+  <circle cx="306" cy="236" r="10" fill="#0066cc"/>
+  <rect x="78" y="370" width="264" height="84" rx="22" fill="#fbfbfd" stroke="#e5e7eb"/>
+  <rect x="104" y="398" width="150" height="12" rx="6" fill="#e8e8ed"/>
+  <rect x="104" y="424" width="104" height="12" rx="6" fill="#d8e7fb"/>
+  <rect x="78" y="482" width="264" height="54" rx="18" fill="#111114"/>
+  <text x="210" y="516" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, Arial" font-size="16" font-weight="700" fill="#ffffff">呼叫代驾</text>
+  <text x="210" y="692" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, Arial" font-size="11" fill="#a1a1a6">移动端线框占位</text>
+</svg>

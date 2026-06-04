@@ -110,6 +110,68 @@
     border: 3px solid #fff;
   }
 
+  .hero-info {
+    margin-top: 24px;
+  }
+
+  .hero-name {
+    margin-bottom: 8px;
+  }
+
+  .name-cn {
+    font-size: 28px;
+    font-weight: 700;
+    color: #111;
+    margin-right: 12px;
+  }
+
+  .name-en {
+    font-size: 16px;
+    color: #475569;
+    font-weight: 400;
+  }
+
+  .hero-title {
+    font-size: 16px;
+    color: #174a6a;
+    font-weight: 500;
+    margin-bottom: 16px;
+  }
+
+  .hero-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+
+  .tag {
+    background: #f0f9ff;
+    color: #174a6a;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 500;
+    border: 1px solid #bae6fd;
+  }
+
+  .hero-contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    font-size: 14px;
+    color: #475569;
+  }
+
+  .hero-contact a {
+    color: #174a6a;
+    text-decoration: none;
+  }
+
+  .hero-contact a:hover {
+    text-decoration: underline;
+  }
+
   /* ── Section ── */
   .project-section {
     max-width: 1200px;
@@ -338,7 +400,14 @@
       padding: 60px 20px 40px;
     }
     .hero-content h1 { font-size: 32px; }
-    .hero-content p { font-size: 16px; margin: 0 auto; }
+    .hero-subtitle { font-size: 16px; margin: 0 auto; }
+    .hero-info { margin-top: 20px; }
+    .name-cn { font-size: 24px; }
+    .name-en { font-size: 14px; }
+    .hero-title { font-size: 14px; }
+    .hero-tags { justify-content: center; }
+    .tag { font-size: 12px; padding: 3px 10px; }
+    .hero-contact { justify-content: center; font-size: 13px; }
     .hero-portrait img { width: 180px; height: 220px; }
     .section-title { font-size: 24px; }
     .project-grid { grid-template-columns: 1fr; }
@@ -366,10 +435,27 @@
 <section class="hero">
   <div class="hero-content">
     <h1>项目经历</h1>
-    <p>0-1 业务系统搭建，用产品思维解决真实业务问题</p>
+    <p class="hero-subtitle">0-1 业务系统搭建，用产品思维解决真实业务问题</p>
+    <div class="hero-info">
+      <div class="hero-name">
+        <span class="name-cn">张欣杰</span>
+        <span class="name-en">XINJIE ZHANG</span>
+      </div>
+      <div class="hero-title">产品经理 / AI 产品 / FDE 方向</div>
+      <div class="hero-tags">
+        <span class="tag">车辆融资咨询 CRM</span>
+        <span class="tag">AI 辅助录入</span>
+        <span class="tag">0-1 业务系统</span>
+      </div>
+      <div class="hero-contact">
+        <span>13172918902</span>
+        <span>1278511339@qq.com</span>
+        <a href="https://zzzgitdx.github.io/resume/" target="_blank">在线简历</a>
+      </div>
+    </div>
   </div>
   <div class="hero-portrait">
-    <img src="./pic3-compressed.jpg" alt="张欣杰">
+    <img src="./pic2-compressed.jpg" alt="张欣杰" loading="eager" decoding="async">
   </div>
 </section>
 
